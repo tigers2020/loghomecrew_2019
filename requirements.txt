@@ -1,0 +1,16 @@
+dj-database-url
+Django
+gunicorn
+psycopg2
+whitenoise
+python-dotenv
+django-ckeditor
+misaka
+django-resized
+pillow
+django-braces
+numpy
+django-anymail
+django-recaptcha2
+django-taggit
+python-decouple

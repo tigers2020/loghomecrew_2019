@@ -1,0 +1,88 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    About Us |
+{% endblock %}
+{% block metadata %}
+R&J company is a premier producer of luxury log homes and timber frame homes. As a family-owned and operated business, we are pleased to offer the highest quality world class craftsmanship with modern building techniques.
+{% endblock %}
+{% block container %}
+    <section class="banner_area" data-stellar-background-ratio="0.8" style="background-position: 50% -320px;">
+        <h2>About Us</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="{% url 'index_view' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'about_us' %}">About Us</a>
+            </li>
+        </ol>
+    </section>
+    <section class="our_services_tow">
+        <div class="container">
+            <div class="architecture_area services_pages">
+                <div class="portfolio_filter portfolio_filter_2">
+                    <ul>
+                        <li data-filter="*" class="active">
+                            <a href="#">See All</a>
+                        </li>
+
+                        {% for us in about_us %}
+                            <li data-filter=".{{ us.slug }}">
+                                <a href>{{ us.title }}</a>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                <div class="portfolio_item portfolio_2" style="position: relative; height: 550px;">
+                    {% for us in about_us %}
+                        <div class="single_facilities col-md-7 {{ us.slug }}"
+                             style="position: absolute; left: 0%; top: 90px;">
+                            <div class="who_we_area">
+                                {{ us.article_text|safe }}
+                            </div>
+                        </div>
+                        {% if us.image %}
+                            <div class="single_facilities col-md-5 {{ us.slug }}"
+                                 style="position: absolute; right: 0; top: 90px;">
+                                <img src="{{ us.image.url }}" alt>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial_area">
+        <div class="container">
+            <div class="tittle wow fadeInUp">
+                <h2>Feed Back</h2>
+                <h4>What previous Customer Said</h4>
+            </div>
+            <div class="testimonial_carosel">
+                {% for feed in feed_back %}
+                    <div class="item">
+                        <div class="media">
+                            {% if feed.image %}
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="{{ feed.image }}" alt="">
+                                    </a>
+                                </div>
+                            {% endif %}
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ feed.title }}</h4>
+                            </div>
+                        </div>
+                        <p><i class="fa fa-quote-left" aria-hidden="true"></i>{{ feed.article_text|safe }}<i
+                                class="fa fa-quote-right"
+                                aria-hidden="true"></i></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+    <h1> Article List</h1>
+    <ol>
+    {% for article in articletext_list %}
+        <h2><li><a href="{{ article.id }}">{{ article.title }}</a></li></h2>
+    {% endfor %}
+
+    </ol>
+{% endblock %}

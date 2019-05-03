@@ -1,0 +1,180 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+Gallery |
+{% endblock %}
+{% block metadata %}
+Log home construction images for travel {% for location in locations %}{{ location }}{% if not forloop.last %}, {% endif %}{% endfor %} states.
+
+{% endblock %}
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/vendors/ilightbox/css/ilightbox.css' %}"/>
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/gallery.css' %}"/>
+
+{% endblock %}
+{% block container %}
+<section class="banner_area" data-stellar-background-ratio="0.8" style="background-position: 50% -320px;">
+    <h2>Gallery</h2>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{% url 'index_view' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'galleries_index' %}">Gallery</a>
+        </li>
+    </ol>
+</section>
+{% regroup buildingimages_list|dictsortreversed:'date_build' by date_build|date:'Y' as image_by_year_list %}
+<section class="featured_works row" data-stellar-background-ratio="0.3">
+    <div class="featured_gallery">
+        {% for year, image_by_year in image_by_year_list %}
+
+        {% regroup image_by_year by location as image_by_location_list %}
+        {% for location, image_by_location in image_by_location_list %}
+
+        <div class="col-md-3 extra-margin-1">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <div class="view overlay hm-black-light z-depth-1">
+                        <img src="{{ image_by_location.0.thumb_image.url }}" alt="" class="img-responsive">
+                        <a href="#gallery_light_box" id="{{ image_by_location.0.pk }}">
+                            <div class="mask waves-effect"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-content text-center rgba-black-strong">
+                    <h5 class="white-text">{{ location.name }}</h5>
+                </div>
+            </div>
+        </div>
+        {#
+        <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">#}
+            {# <img src="{{ image_by_location.0.thumb_image.url }}" alt="">#}
+            {#
+            <div class="gallery_hover">#}
+                {# <h4>{{ location.name }}</h4>#}
+                {# <a href="#gallery_light_box" id="{{ image_by_location.0.pk }}">VIEW MORE</a>#}
+                {#
+            </div>
+            #}
+            {#
+        </div>
+        #}
+        {% endfor %}
+        {% endfor %}
+    </div>
+</section>
+<div id="gallery_light_box" style="display: none;">light box div</div>
+{% endblock %}
+
+
+{% block custom_js %}
+<script type="text/javascript"
+        src="{% static 'main/vendors/ilightbox/js/jquery.requestAnimationFrame.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/vendors/ilightbox/js/jquery.mousewheel.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/vendors/ilightbox/js/ilightbox.packed.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        window.prettyPrint && prettyPrint();
+        {%
+            regroup
+            buildingimages_list | dictsortreversed
+        :
+            'date_build'
+            by
+            date_build | date
+        :
+            'Y' as image_by_year_list %
+        }
+        {%
+            for year, image_by_year in image_by_year_list %}
+        {%
+            regroup
+            image_by_year
+            by
+            location as image_by_location_list %
+        }
+        {%
+            for location, image_by_location in image_by_location_list %}
+        $('#{{ image_by_location.0.pk }}').click(function () {
+            $.iLightBox([
+
+                { % for image in image_by_location %
+        }
+            {
+                URL: "{{ image.image.url }}",
+                    type
+            :
+                "image",
+                    title
+            :
+                "{{ image.title }}",
+                    caption
+            :
+                "{{ image.description }}",
+                    options
+            :
+                {
+                    thumbnail: "{{ image.thumb_image.url }}",
+                }
+            }
+        ,
+            {%
+                endfor %
+            }
+        ],
+            {
+                skin: "metro-black",
+                    path
+            :
+                'horizontal',
+                    overlay
+            :
+                {
+                    opacity: .7,
+                        blur
+                :
+                    false
+                }
+            ,
+                styles: {
+                    nextOpacity: .55,
+                        prevOpacity
+                :
+                    .55
+                }
+            }
+        )
+        });
+        {%
+            endfor %
+        }
+        {%
+            endfor %
+        }
+    });
+    $(window).load(function () {
+        $('[data-spy="scroll"]').each(function () {
+            var t = $(this);
+            t.scrollspy();
+            $(window).resize(function () {
+                t.scrollspy('refresh');
+                $(this).trigger('scroll');
+            });
+        });
+    });
+
+    window.___gcfg = {lang: "en"};
+    (function () {
+        var po = document.createElement("script");
+        po.type = "text/javascript";
+        po.async = true;
+        po.src = "https://apis.google.com/js/plusone.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+{% endblock %}

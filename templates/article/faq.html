@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% block title %}
+Q&A |
+{% endblock %}
+{% block container %}
+    <section class="mini-slider container-fluid">
+    <div class="mini-banner" style="height: 50px;">
+            {% for buildImage in buildImages %}
+                <div data-thumb="{{ buildImage.image.url }}" data-src="{{ buildImage.image.url }}" style="height: 150px">
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+<div class="panel-group container" id="accordion" style="margin-top: 3em;">
+  {% for faq in faqs %}
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#{{ faq.slug }}">
+        {{ faq.title }}</a>
+      </h4>
+    </div>
+    <div id="{{ faq.slug }}" class="panel-collapse collapse">
+      <div class="panel-body">{{ faq.article_text|safe|linebreaks }}</div>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}
+
+{% block custom_js %}
+<script>
+    $(document).ready(function () {
+        $('.mini-banner').camera(
+            {
+                height:'20%',
+                pagination: false,
+                mobileAutoAdvance: true,
+                fx: 'random',
+                navigation: false,
+                playPause: false,
+
+            }
+        );
+    })
+</script>
+{% endblock %}

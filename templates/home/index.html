@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+{% load recaptcha2 %}
+{% recaptcha_init %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "main/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static "main/css/mdb.min.css" %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static "main/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "main/css/contact_us.css" %}" rel="stylesheet">
+</head>
+
+<body class="black-skin" data-gr-c-s-loaded="true">
+<!-- Start your project here-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar top-nav-collapse">
+    <div class="container">
+        <a class="navbar-brand" href="#">LARRY SMITH</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto smooth-scroll">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="#feature">Features</a>
+
+                </li>
+                <li class="nav-item dropdown btn-group">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" type="button" id="dropdownMenu1"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galley<span class="sr-only">(current)</span></a>
+
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                        {% for year in years %}
+                            {% if forloop.first %}
+                                <a class="dropdown-item waves-effect waves-light" href="#section_{{ year }}"
+                                   data-offset="130">{{ year }}</a>
+                            {% else %}
+                                <a class="dropdown-item waves-effect waves-light" href="#section_{{ year }}"
+                                   data-offset="80">{{ year }}</a>
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="#testimonials" data-offset="110">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="#contact" data-offset="110">Contact</a>
+                </li>
+            </ul>
+            <!-- Social Icon  -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main id="home" class="mt-5 pt-5 pb-5">
+    <section id="feature" class="section feature-box mt-5 pt-4 pb-3 rgba-blue-grey-light">
+        <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-4 wow fadeIn"> We Build Your Dream House </h3>
+
+        <div class="row text-center d-flex align-items-stretch">
+            {% for feature in features %}
+                <div class="col-md-4 mb-1 mt-1 wow fadeIn">
+                    <div class="avatar mx-auto bg-transparent">
+                        <img src="{{ feature.image.url }}" alt="{{ feature.title }}"
+                             class="rounded-circle img-thumbnail"/>
+                    </div>
+                    <h5 class="font-weight-bold mb-4">{{ feature.title }}</h5>
+                    <p class="grey-text">
+                        {{ feature.article_text_html|safe }}
+                    </p>
+                </div>
+
+            {% endfor %}
+        </div>
+
+
+    </section>
+    <section id="service">
+        <h1 class="text-uppercase font-weight-bold">Check Our Services</h1>
+        {% for service in services %}
+            <h2>
+                {{ service.title }}
+            </h2>
+            <p>
+                {{ service.article_text_html|safe }}
+            </p>
+        {% endfor %}
+
+    </section>
+    <section class="section-white" id="portfolio">
+        <div class="container-fluid stylish-color-dark">
+            {% for year, year_images in images.items %}
+                <section id="section_{{ year }}" class="section-dark">
+
+                    {% regroup year_images by location as image_by_location %}
+                    {% for location_images in image_by_location %}
+                        {% if forloop.first %}
+                            <h1 class="section-title text-center white-text wow fadeIn">{{ year }}</h1>
+                            <div class="row wow fadeIn">
+                            <div class="col-md-12 elegant-color">
+                            <div id="mdb-lightbox-ui"></div>
+                            <div class="mdb-lightbox" data-pswp-udi="{{ forloop.counter }}">
+                        {% endif %}
+                    <h2 class=" white-text wow fadeIn text-center pt-2">
+                        {{ location_images.grouper }}
+                    </h2>
+                    <div class="row wow fadeIn elegant-color-dark p-3">
+                        {% for location_image in location_images.list %}
+                            {% if forloop.counter <= 12 %}
+                                <figure class="col-md-4 col-lg-3 col-sm-6">
+                                    <a href="{{ location_image.image.url }}" data-size="1600x1067">
+                                        <img src="{{ location_image.image.url }}" class="img-fluid z-depth-1"
+                                             alt="{{ year }}{{ location_images.grouper }}{{ location_image.title }}">
+                                    </a>
+                                </figure>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% if forloop.last %}
+                        </div>
+                        </div>
+                        </div>
+                    {% endif %}
+                    {% endfor %}
+                </section>
+            {% endfor %}
+
+        </div>
+
+        <article>
+            {% for text in articletext %}
+                <h5>{{ text.title }}</h5>
+                <p>{{ text.article_text_html }}</p>
+            {% endfor %}
+
+        </article>
+    </section>
+    <section id="testimonials">
+        <h1 class="font-weight-bold">What Clients Said:</h1>
+        {% for testimonial in testimonials %}
+            <h2>
+                {{ testimonial.title }}
+            </h2>
+            <p>
+                {{ testimonial.article_text_html|safe }}
+            </p>
+        {% endfor %}
+
+
+    </section>
+
+    <section id="contact">
+
+        {% extends 'home/contact_us.html' %}
+
+    </section>
+</main>
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static "main/js/jquery-1.12.0.min.js" %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static "main/js/popper.min.js" %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static "main/js/bootstrap.min.js" %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static "main/js/mdb.min.js" %}"></script>
+<script>
+    new WOW().init();
+    $(function () {
+        $("#mdb-lightbox-ui").load("{% static 'main/mdb-addons/mdb-lightbox-ui.html' %}");
+
+    })
+</script>
+</body>
+
+</html>

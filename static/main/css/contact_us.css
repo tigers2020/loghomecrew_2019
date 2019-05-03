@@ -1,0 +1,9 @@
+.all_contact_info .contact_row .send_message .contact_box .input_box {
+    color: #222222;
+}
+
+@media(min-width:768px) {
+    .form-control {
+        width: 100%;
+    }
+}
