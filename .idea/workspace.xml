@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a24847f-fd05-42ee-b161-937bd12186e8" name="Default" comment="update 5-02-19 : New design applied." />
+    <list default="true" id="2a24847f-fd05-42ee-b161-937bd12186e8" name="Default" comment="update 5-02-19 : New design applied.">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/loghomecrew.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/templates/home/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
+              <caret line="176" selection-start-line="176" selection-end-line="176" />
             </state>
           </provider>
         </entry>
@@ -76,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            <state relative-caret-position="969">
+              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -125,7 +138,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/loghomecrew" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -221,19 +234,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="loghomecrew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,9 +247,9 @@
     <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
     <property name="SearchEverywhereHistoryKey" value="date_build&#9;null&#9;null&#10;build_date&#9;null&#9;null&#10;article_detail&#9;FILE&#9;file://C:/Users/tiger/PycharmProjects/loghomecrew/templates/article/article_detail.html&#10;command&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rjconstruction" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -386,6 +388,7 @@
       <workItem from="1554812565656" duration="10713000" />
       <workItem from="1556314435431" duration="35341000" />
       <workItem from="1556845521155" duration="2790000" />
+      <workItem from="1556852514808" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1513167453613</created>
@@ -549,7 +552,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71715000" />
+    <option name="totallyTimeSpent" value="71870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -564,12 +567,12 @@
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14424635" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14667746" />
       <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.23662885" side_tool="true" visible="true" weight="0.37089714" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="0" sideWeight="0.23743922" side_tool="true" visible="true" weight="0.37089714" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49918962" weight="0.32932165" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.49612403" weight="0.32822758" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.76337117" visible="true" weight="0.37089714" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.7625608" visible="true" weight="0.37089714" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49594814" weight="0.32713348" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32857144" />
@@ -596,7 +599,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
-      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/loghomecrew" />
     </ignored-roots>
     <MESSAGE value="git" />
     <MESSAGE value="fix gallery" />
@@ -631,9 +634,7 @@
     <entry file="file://$PROJECT_DIR$/static/main/images/preloader.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/loghomecrew/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/loghomecrew/wsgi.py" />
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/394538891/builtins.py" />
     <entry file="file://$PROJECT_DIR$/account/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -743,13 +744,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.env" />
     <entry file="file://$PROJECT_DIR$/home/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -774,16 +769,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loghomecrew/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-          <folding>
-            <element signature="e#645#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/loghomecrew/urls.py" />
     <entry file="file://$PROJECT_DIR$/home/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -811,13 +797,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="424" selection-start-line="424" selection-end-line="424" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/base.py" />
     <entry file="file://$PROJECT_DIR$/article/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -835,20 +815,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding>
-            <element signature="e#315#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py" />
     <entry file="file://$PROJECT_DIR$/article/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loghomecrew/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/templates/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="176" selection-start-line="176" selection-end-line="176" />
         </state>
       </provider>
     </entry>
@@ -875,6 +854,16 @@
     <entry file="file://$PROJECT_DIR$/templates/home/contact_us.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/article/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -886,26 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loghomecrew/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
         </state>
       </provider>
     </entry>
