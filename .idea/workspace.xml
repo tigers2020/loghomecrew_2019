@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a24847f-fd05-42ee-b161-937bd12186e8" name="Default" comment="update 5-02-19 : New design applied.">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/loghomecrew.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="2a24847f-fd05-42ee-b161-937bd12186e8" name="Default" comment="update 5-02-19 : New design applied." />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +33,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
               <caret line="176" selection-start-line="176" selection-end-line="176" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -138,6 +134,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -183,7 +180,6 @@
         <option value="$PROJECT_DIR$/static_cdn/main/css/base.css" />
         <option value="$PROJECT_DIR$/templates/home/base.html" />
         <option value="$PROJECT_DIR$/home/urls.py" />
-        <option value="$PROJECT_DIR$/loghomecrew/settings.py" />
         <option value="$PROJECT_DIR$/loghomecrew/urls.py" />
         <option value="$PROJECT_DIR$/galleries/models.py" />
         <option value="$PROJECT_DIR$/.env" />
@@ -194,6 +190,7 @@
         <option value="$PROJECT_DIR$/templates/home/contact_us.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/home/index.html" />
+        <option value="$PROJECT_DIR$/loghomecrew/settings.py" />
       </list>
     </option>
   </component>
@@ -236,6 +233,11 @@
             <path>
               <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
+              <item name="loghomecrew" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -388,7 +390,7 @@
       <workItem from="1554812565656" duration="10713000" />
       <workItem from="1556314435431" duration="35341000" />
       <workItem from="1556845521155" duration="2790000" />
-      <workItem from="1556852514808" duration="155000" />
+      <workItem from="1556852514808" duration="358000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1513167453613</created>
@@ -537,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556846892789</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update 5-02-19 : New design applied.">
+      <created>1556852755021</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556852755021</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -552,7 +561,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71870000" />
+    <option name="totallyTimeSpent" value="72073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,14 +574,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14667746" />
       <window_info id="Structure" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="0" sideWeight="0.23743922" side_tool="true" visible="true" weight="0.37089714" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.23743922" side_tool="true" visible="true" weight="0.37089714" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49918962" weight="0.32932165" />
       <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.49612403" weight="0.32822758" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.7625608" visible="true" weight="0.37089714" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.7625608" visible="true" weight="0.37089714" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49594814" weight="0.32713348" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32857144" />
@@ -815,7 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py" />
     <entry file="file://$PROJECT_DIR$/article/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -875,6 +884,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
