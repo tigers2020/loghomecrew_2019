@@ -155,8 +155,66 @@
 
         </article>
     </section>
+
+
     <section id="testimonials">
-        <h1 class="font-weight-bold">What Clients Said:</h1>
+        <h2 class="h1-responsive font-weight-bold text-center my-5"> What Clients Said:</h2>
+        <p class="grey-text text-center w-responsive mx-auto mb-5">
+            test
+        </p>
+        {#            Carousel Wrapper#}
+        <div id="testimonial_carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+            {#            <!-- Controls -->#}
+            <div class="controls-top">
+                <a class="btn-floating primary-color waves-effect waves-light" href="#testimonial_carousel"
+                   data-slide="prev">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a class="btn-floating primary-color waves-effect waves-light" href="#testimonial_carousel"
+                   data-slide="next">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            <!-- Controls -->
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {% for testimonial in testimonials %}
+                    {% if forloop.first %}
+                        <li class="primary-color active" data-target="#testmonial_carousel"
+                            data-slide-to="{{ forloop.counter0 }}"></li>
+                    {% elif forloop.counter|divisibleby:3 %}
+                        <li class="primary-color" data-target="#testmonial_carousel"
+                            data-slide-to="{{ forloop.counter0 }}"></li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+            <!--Indicators -->
+            <!--Slides -->
+            <div class="carousel-inner" role="listbox">
+                {% for testimonial in testimonials %}
+                    {% if forloop.counter|divisibleby:3 or forloop.first %}
+                        <h5>{{ forloop.counter }}</h5>
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="col-md-4 mb-2{% if not forloop.first %} clearfix d-none d-md-block{% endif %}">
+                    {% endif %}
+                <div class="card card-cascade narrower card-ecommerce">
+                    <div class="card-body card-body-cascade text-center">
+                        <a href="" class="text-muted">
+                            <h5>{{ testimonial.title }}</h5>
+                        </a>
+
+                        <p class="card-text">{{ testimonial.article_text_html|safe }}</p>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+
+        </div>
         {% for testimonial in testimonials %}
             <h2>
                 {{ testimonial.title }}
@@ -187,12 +245,12 @@
                     <h3 class="mt-4"><i class="fas fa-envelope pr-2">Write to us:</i></h3>
 
                     <div class="row">
-                        <form class="form-inline contact_box" method="post"
-                        /">
-                        {% csrf_token %}
-                        {{ form.media }}
-                        {{ form.as_table }}
-                        <button type="submit" class="btn btn-default">Send Message</button>
+                        <form class="form-inline contact_box" method="post">
+                            {% csrf_token %}
+                            {{ form.media }}
+                            {% crispy form %}
+
+                            <button type="submit" class="btn btn-default">Send Message</button>
 
                     </div>
                 </div>

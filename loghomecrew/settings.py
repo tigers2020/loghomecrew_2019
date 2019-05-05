@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'anymail',
     'snowpenguin.django.recaptcha2',
-    'taggit',
     'django.contrib.sitemaps',
     'crispy_forms',
 ]
