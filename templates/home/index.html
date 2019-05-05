@@ -73,16 +73,18 @@
         </div>
     </div>
 </nav>
-<main id="home" class="mt-5 pt-5 pb-5">
-    <section id="feature" class="section feature-box mt-5 pt-4 pb-3 rgba-blue-grey-light">
+<main id="home">
+    <section id="feature" class="section feature-box mt-5 pt-4 pb-3 pl-5 pr-5 rgba-blue-grey-light">
         <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-4 wow fadeIn"> We Build Your Dream House </h3>
 
         <div class="row text-center d-flex align-items-stretch">
             {% for feature in features %}
-                <div class="col-md-4 mb-1 mt-1 wow fadeIn">
+                <div class="col-md-6 mb-1 mt-1 wow fadeIn">
                     <div class="avatar mx-auto bg-transparent">
+                        {% if feature.image %}
                         <img src="{{ feature.image.url }}" alt="{{ feature.title }}"
                              class="rounded-circle img-thumbnail"/>
+                        {% endif %}
                     </div>
                     <h5 class="font-weight-bold mb-4">{{ feature.title }}</h5>
                     <p class="grey-text">
@@ -93,18 +95,6 @@
             {% endfor %}
         </div>
 
-
-    </section>
-    <section id="service">
-        <h1 class="text-uppercase font-weight-bold">Check Our Services</h1>
-        {% for service in services %}
-            <h2>
-                {{ service.title }}
-            </h2>
-            <p>
-                {{ service.article_text_html|safe }}
-            </p>
-        {% endfor %}
 
     </section>
     <section class="section-white" id="portfolio">
@@ -157,7 +147,7 @@
     </section>
 
     <!-- Section: Products v.5 -->
-    <section class="text-center my-5">
+    <section id="testimonials" class="text-center my-5">
 
         <!-- Section heading -->
         <h2 class="h1-responsive font-weight-bold text-center my-5">Our bestsellers</h2>
