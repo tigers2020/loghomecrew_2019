@@ -50,6 +50,9 @@
                         {% endfor %}
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="#aboutus" data-offset="100">About Us</a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" href="#testimonials" data-offset="110">Testimonials</a>
@@ -82,8 +85,8 @@
                 <div class="col-md-6 mb-1 mt-1 wow fadeIn">
                     <div class="avatar mx-auto bg-transparent">
                         {% if feature.image %}
-                        <img src="{{ feature.image.url }}" alt="{{ feature.title }}"
-                             class="rounded-circle img-thumbnail"/>
+                            <img src="{{ feature.image.url }}" alt="{{ feature.title }}"
+                                 class="rounded-circle img-thumbnail"/>
                         {% endif %}
                     </div>
                     <h5 class="font-weight-bold mb-4">{{ feature.title }}</h5>
@@ -146,7 +149,15 @@
         </article>
     </section>
 
-    <!-- Section: Products v.5 -->
+    <section id="aboutus" class="text-center blue lighten-4">
+        <h2 class="text-center font-weight-bold">{{ aboutus.title }}</h2>
+        <div class="card blue lighten-4">
+            <div class="card-body">
+                {{ aboutus.article_text_html|safe }}
+            </div>
+        </div>
+    </section>
+
     <section id="testimonials" class="text-center my-5">
 
         <!-- Section heading -->

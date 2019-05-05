@@ -35,6 +35,7 @@ class IndexView(generic.TemplateView):
         features = text.filter(category=1)
         testimonials = text.filter(category=3)
         services = text.filter(category=5)
+        aboutus = text.get(title="About Us")
 
         testimonial_count = testimonials.count()
 
@@ -64,6 +65,7 @@ class IndexView(generic.TemplateView):
         context['success'] = thankyou
         context['years'] = years
         context['images'] = img
+        context['aboutus'] = aboutus
 
         context['features'] = features
         context['testimonials'] = testimonials
