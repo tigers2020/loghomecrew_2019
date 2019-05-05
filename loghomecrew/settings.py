@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'snowpenguin.django.recaptcha2',
     'taggit',
     'django.contrib.sitemaps',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ROOT_URLCONF = 'loghomecrew.urls'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
