@@ -36,6 +36,9 @@ class IndexView(generic.TemplateView):
         testimonials = text.filter(category=3)
         services = text.filter(category=5)
 
+        testimonial_count = testimonials.count()
+
+        count = int(testimonial_count / 3)
         thankyou = {}
         if self.request.method == "GET":
             form = ContactForm()
@@ -64,6 +67,7 @@ class IndexView(generic.TemplateView):
 
         context['features'] = features
         context['testimonials'] = testimonials
+        context['testimonial_count'] = range(count)
         context['services'] = services
         return context
 
