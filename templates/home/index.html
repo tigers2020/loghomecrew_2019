@@ -149,9 +149,9 @@
         </article>
     </section>
 
-    <section id="aboutus" class="text-center blue lighten-4">
+    <section id="aboutus" class="text-center rgba-blue-grey-light">
         <h2 class="text-center font-weight-bold">{{ aboutus.title }}</h2>
-        <div class="card blue lighten-4">
+        <div class="card rgba-blue-grey-light">
             <div class="card-body">
                 {{ aboutus.article_text_html|safe }}
             </div>
@@ -288,17 +288,23 @@
                     <h3 class="my-4 pb-2">Contact Information</h3>
                     <ul class="text-lg-left list-unstyled ml-4">
                         <li>
-                            <p><i class="fas fa-map-marker-alt pr-2"></i> 6639 Pleasant Valley Rd Friendship NY 14739
+                            <p><i class="fas fa-map-marker-alt pr-2"></i> 6639 Pleasant Valley Rd <br/>Friendship NY
+                                14739
                             </p>
                         </li>
                         <li>
                             <p><i class="fas fa-phone pr-2"></i>+ 01 585 307 0444</p>
                         </li>
                         <li>
-                            <p><i class="fas fa-envelope pr-2"></i>callbobmack@live.com</p>
+                            <p><i class="fas fa-envelope pr-2"></i><a href="mailto:callbobmack@live.com">
+                                callbobmack@live.com</a></p>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div id="map-container-google-8" class="z-depth-1-half map-container-1">
+                <iframe src="https://maps.google.com/maps?q=6639+Pleasant+Valley+Rd,+Friendship,+NY+14739&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
