@@ -2,6 +2,18 @@
 <html lang="en">
 {% load staticfiles %}
 <head>
+    <script>
+        (function () {
+
+            var scripts = ["/static/general/bf-core.min.js", "/static/containers/PSD625.js"];
+            for (var i = 0; i < scripts.length; i++) {
+                var script = document.createElement("script");
+                script.src = "//brandflow.net" + scripts[i] + "?ts=" + Date.now() + "#";
+                script.async = false;
+                document.head.appendChild(script);
+            }
+        })();
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -63,15 +75,15 @@
             </ul>
             <!-- Social Icon  -->
             <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light"><i class="fab fa-instagram"></i></a>
-                </li>
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook-f"></i></a>#}
+                {#                </li>#}
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>#}
+                {#                </li>#}
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link waves-effect waves-light"><i class="fab fa-instagram"></i></a>#}
+                {#                </li>#}
             </ul>
         </div>
     </div>
@@ -80,27 +92,38 @@
     <section id="feature" class="section feature-box mt-5 pt-4 pb-3 pl-5 pr-5 rgba-blue-grey-light">
         <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-4 wow fadeIn"> We Build Your Dream House </h3>
 
-        <div class="row text-center d-flex align-items-stretch">
+
+        <div class="row d-flex justify-content-center">
             {% for feature in features %}
-                <div class="col-md-6 mb-1 mt-1 wow fadeIn">
-                    <div class="avatar mx-auto bg-transparent">
+                <div class="col-md-6 col-xl-5 mb-4">
+                    <!--Featured image-->
+                    <div class="view overlay rounded z-depth-2">
                         {% if feature.image %}
-                            <img src="{{ feature.image.url }}" alt="{{ feature.title }}"
-                                 class="rounded-circle img-thumbnail"/>
+                            <img src="{{ feature.image.url }}" class="img-fluid"
+                                 alt="{{ feature.image.name }}">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
                         {% endif %}
+
+
                     </div>
-                    <h5 class="font-weight-bold mb-4">{{ feature.title }}</h5>
-                    <p class="grey-text">
-                        {{ feature.article_text_html|safe }}
-                    </p>
+                    <!--Excerpt-->
+                    <div class="card-body">
+                        <a href="" class="green-text">
+                            <h5 class="font-weight-bold mt-2 mb-3"><i
+                                    class="fas fa-chart-line pr-2"></i>{{ feature.title }}</h5>
+                        </a>
+                        <h4 class="font-weight-bold mb-3">{{ feature.title }}</h4>
+                        <p>{{ feature.article_text_html|safe }}</p>
+                    </div>
                 </div>
-
             {% endfor %}
+
+
         </div>
-
-
     </section>
-    <section class="section-white" id="portfolio">
+    <section class="section" id="galley">
         <div class="container-fluid stylish-color-dark">
             {% for year, year_images in images.items %}
                 <section id="section_{{ year }}" class="section-dark">
@@ -148,24 +171,36 @@
 
         </article>
     </section>
-
     <section id="aboutus" class="text-center rgba-blue-grey-light">
-        <h2 class="text-center font-weight-bold">{{ aboutus.title }}</h2>
-        <div class="card rgba-blue-grey-light">
-            <div class="card-body">
-                {{ aboutus.article_text_html|safe }}
+        <h2 class="h1-responsive text-center font-weight-bold py-5">{{ aboutus.title }}</h2>
+        <div class="row">
+            <div class="col-lg-5 text-center text-lg-left">
+                {% if aboutus.image %}
+                    <img class="img-fluid mx-auto d-block hoverable " src="{{ aboutus.image.url }}"
+                         alt="{{ aboutus.title }}">
+                {% endif %}
+            </div>
+            <div class="col-lg-7">
+                <div class="row mb-3">
+                    <div class="col-1">
+                        <i class="fas fa-home fa-lg indigo-text"></i>
+                    </div>
+                    <div class="col-xl-10 col-md-11 col-10">
+                        <h5 class="font-weight-bold">{{ aboutus.title }}</h5>
+                        <div class="text-left">
+                            {{ aboutus.article_text_html|safe }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
     <section id="testimonials" class="text-center my-5">
 
         <!-- Section heading -->
-        <h2 class="h1-responsive font-weight-bold text-center my-5">Our bestsellers</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-5">What Our Customers Said</h2>
         <!-- Section description -->
-        <p class="grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
-            nostrum quisquam eum porro a pariatur veniam.</p>
+        <p class="grey-text text-center w-responsive mx-auto mb-5"></p>
 
         <!-- Carousel Wrapper -->
         <div id="testimonial_carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -203,7 +238,7 @@
                         {% endif %}
                         <div class="carousel-item {% if forloop.first %} active{% endif %}">
                     {% endif %}
-                <div class="col-md-4 mb-2 {% if not forloop.first or forloop.counter0|divisibleby:3 %}clearfix d-none d-md-block{% endif %}">
+                <div class="col-md-4 mb-2 {% if not forloop.counter0|divisibleby:3 %}clearfix d-none d-md-block{% endif %}">
                     <!-- Card -->
                     <div class="card card-cascade narrower card-ecommerce">
                         {#                        <!-- Card image -->#}
@@ -220,7 +255,7 @@
                         <div class="card-body card-body-cascade text-center">
                             <!-- Category & Title -->
                             <a href="" class="text-muted">
-                                <h5>{{ forloop.counter }}</h5>
+                                <h5>{{ forloop.counter0 }}</h5>
                             </a>
                             <h4 class="card-title my-4">
                                 <strong>
@@ -268,19 +303,44 @@
             </div>
         {% endif %}
         <div class="row p-5">
-            <div class="col-lg-8">
-                <div class="form">
-                    <h3 class="mt-4"><i class="fas fa-envelope pr-2">Write to us:</i></h3>
+            <div class="col-md-8 md-0 mb-5">
+                <h3 class="mt-4"><i class="fas fa-envelope pr-2">Write to us:</i></h3>
 
-                    <div class="row">
-                        <form class="form-inline contact_box" method="post">
-                            {% csrf_token %}
-                            {{ form.media }}
-                            {{ form.as_ul }}
+                <div class="col-md-12">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {% for foo in form %}
+                            {% if foo.name == "first_name" %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            {{ foo }}
+                                        </div>
+                                    </div>
+                                    {% elif foo.name == "last_name" %}
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0 ">
+                                            {{ foo }}
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <button type="submit" class="btn btn-default">Send Message</button>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class=" md-form mb-0 ">
+                                            {{ foo }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
 
-                    </div>
+                        {% endfor %}
+
+
+                        <button type="submit" class="btn btn-default">Send Message</button>
+                    </form>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -302,13 +362,12 @@
                     </ul>
                 </div>
             </div>
-            <div id="map-container-google-8" class="z-depth-1-half map-container-1">
-                <iframe src="https://maps.google.com/maps?q=6639+Pleasant+Valley+Rd,+Friendship,+NY+14739&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        frameborder="0" allowfullscreen></iframe>
-            </div>
         </div>
     </section>
 </main>
+<footer>
+
+</footer>
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -325,7 +384,11 @@
         $("#mdb-lightbox-ui").load("{% static 'main/mdb-addons/mdb-lightbox-ui.html' %}");
 
     })
+    $(document).ready(function () {
+        $('.mdb-select').materialSelect();
+    });
 </script>
+
 </body>
 
 </html>
