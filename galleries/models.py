@@ -1,16 +1,15 @@
 import os
-from django.db import models
+from datetime import datetime
+# Create your models here.
+from io import BytesIO
+
 from PIL import Image
+from ckeditor.fields import RichTextField
+from django.core.files.base import ContentFile
+from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 from django_resized import ResizedImageField
-from django.core.files.base import ContentFile
-from datetime import datetime
-from ckeditor.fields import RichTextField
-
-
-# Create your models here.
-from io import BytesIO
 
 from loghomecrew import settings
 
@@ -90,23 +89,13 @@ class BuildingImages(models.Model):
 		im.thumbnail((320, 320), Image.ANTIALIAS)
 		image_exif = im._getexif()
 		created_date = datetime.strptime(image_exif[36867], '%Y:%m:%d %H:%M:%S')
-		print(created_date)
 
 		thumb_name, thumb_extension = os.path.splitext(self.image.name)
 		thumb_extension = thumb_extension.lower()
 		thumb_filename = thumb_name + "_thumb" + thumb_extension
 
-		if thumb_extension in ['.jpg', '.jpeg']:
-			FTYPE = 'JPEG'
-		elif thumb_extension == '.gif':
-			FTYPE = 'GIF'
-		elif thumb_extension == '.png':
-			FTYPE = '.PNG'
-		else:
-			return False
-
 		temp_thumb = BytesIO()
-		im.save(temp_thumb, FTYPE)
+		im.save(temp_thumb, "JPEG")
 		temp_thumb.seek(0)
 
 		# saving datas
