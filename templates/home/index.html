@@ -131,7 +131,7 @@
                     {% regroup year_images by location as image_by_location %}
                     {% for location_images in image_by_location %}
                         {% if forloop.first %}
-                            <h1 class="section-title text-center white-text wow fadeIn">{{ year }}</h1>
+                            {#                            <h1 class="section-title text-center white-text wow fadeIn">{{ year }}</h1>#}
                             <div class="row wow fadeIn">
                             <div class="col-md-12 elegant-color">
                             <div id="mdb-lightbox-ui"></div>
@@ -293,7 +293,6 @@
     </section>
     {% load recaptcha2 %}
     {% recaptcha_init %}
-    {% load crispy_forms_tags %}
     <section id="contact" class="contact-section my-5">
         {% if success %}
             <div class="alert block alert-success">
