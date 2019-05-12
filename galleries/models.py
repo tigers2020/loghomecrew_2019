@@ -1,7 +1,12 @@
 import os
+
+try:
+	from cStringIO import StringIO
+except ImportError:
+	from io import StringIO
+
 from datetime import datetime
 # Create your models here.
-from io import BytesIO
 
 from PIL import Image
 from ckeditor.fields import RichTextField
@@ -94,7 +99,8 @@ class BuildingImages(models.Model):
 		thumb_extension = thumb_extension.lower()
 		thumb_filename = thumb_name + "_thumb" + thumb_extension
 
-		temp_thumb = BytesIO()
+		print(thumb_filename, thumb_extension)
+		temp_thumb = StringIO()
 		im.save(temp_thumb, "JPEG")
 		temp_thumb.seek(0)
 

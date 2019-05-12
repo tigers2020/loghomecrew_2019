@@ -2,6 +2,7 @@
 <html lang="en">
 {% load staticfiles %}
 <head>
+    <link rel="stylesheet" type="text/css" href="../../static/main/css/base.css"/>
     <script>
         (function () {
 
@@ -17,7 +18,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>R & J Log Home Construction - We Building Best House For You</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -25,6 +26,7 @@
     <!-- Material Design Bootstrap -->
     <link href="{% static "main/css/mdb.min.css" %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
+    <link href="{% static 'main/css/base.css' %}">
     <link href="{% static "main/css/style.css" %}" rel="stylesheet">
     <link href="{% static "main/css/contact_us.css" %}" rel="stylesheet">
 </head>
@@ -33,7 +35,8 @@
 <!-- Start your project here-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar top-nav-collapse">
     <div class="container">
-        <a class="navbar-brand" href="#">LARRY SMITH</a>
+        <a class="navbar-brand" href="#" id="main-logo"><span class="red-text">R</span><span
+                class="grey-text">&amp;</span><span class="blue-text">J</span> Construction</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -364,7 +367,16 @@
         </div>
     </section>
 </main>
-<footer>
+<footer class="footer_area">
+
+    <div class="footer_row row">
+        {% block about_company %}
+        {% endblock %}
+    </div>
+
+    <div class="copyright_area">
+        Copyright 2016 - {% now "Y" %} All rights reserved.
+    </div>
 
 </footer>
 
