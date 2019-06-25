@@ -86,7 +86,7 @@ class BuildingImages(models.Model):
 		super(BuildingImages, self).save(*args, **kwargs)
 
 	class Meta:
-		ordering = ['-date_build']
+		ordering = ['date_build']
 
 	def save_thumbnail(self):
 		im = Image.open(self.image)

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
           content="{% block metadata %}We offer the Highest Quality Log Home Construction. We at R&J Construction company take our work very seriously. If you are not sure where to start your log home project, you may want to start with R&J Construction logs home kit assembly to get the job going{% endblock %}">
+    <meta name="keywords" content="loghome, small, log, home, build, kit, new york, ">
 
     <title>{% block title %}{% endblock %} R & J Log Home Construction - We Building Best House For You</title>
     {% load static %}
@@ -106,6 +107,10 @@ src = "{% static "main/vendors/animate/wow.min.js" %}" ></script>
 <script src="{% static 'main/vendors/stellar/jquery.stellar.js' %}"></script>
 <!-- Theme JS -->
 <script src="{% static 'main/js/theme.js' %}"></script>
+<script src="{% static 'main/js/custom-modules/jQuery.loadScroll.js' %}"></script>
+<script>
+    $('img').loadScroll(500);
+</script>
 
 {% block custom_js %}
 

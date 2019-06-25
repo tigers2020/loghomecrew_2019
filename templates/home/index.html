@@ -18,7 +18,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>R & J Log Home Construction - We Building Best House For You</title>
+    <meta name="title" content="R & J Log Home Construction - We Building Best House For You">
+    <meta name="description"
+          content="We offer the Highest Quality Log Home Construction. We take our work very seriously. start with R&J Construction logs home kit assembly to get the job going">
+    <meta name="keywords"
+          content="log home, kits, plans, builders, log homes, for sale, maintenance, stain, ny, agency, guys, show, gallery, new york, companies, consturrction, contractors, cost, care,">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -76,61 +84,45 @@
                     <a class="nav-link waves-effect waves-light" href="#contact" data-offset="110">Contact</a>
                 </li>
             </ul>
-            <!-- Social Icon  -->
-            <ul class="navbar-nav nav-flex-icons">
-                {#                <li class="nav-item">#}
-                {#                    <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook-f"></i></a>#}
-                {#                </li>#}
-                {#                <li class="nav-item">#}
-                {#                    <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>#}
-                {#                </li>#}
-                {#                <li class="nav-item">#}
-                {#                    <a class="nav-link waves-effect waves-light"><i class="fab fa-instagram"></i></a>#}
-                {#                </li>#}
-            </ul>
         </div>
     </div>
 </nav>
-<main id="home">
-    <section id="feature" class="section feature-box mt-5 pt-4 pb-3 pl-5 pr-5 rgba-blue-grey-light">
+<main id="home" class="mt-5">
+    <section id="feature" class="section feature-box pt-4 pb-3 px-5 rgba-blue-grey-light">
         <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-4 wow fadeIn"> We Build Your Dream House </h3>
-
-
-        <div class="row d-flex justify-content-center">
-            {% for feature in features %}
-                <div class="col-md-6 col-xl-5 mb-4">
-                    <!--Featured image-->
-                    <div class="view overlay rounded z-depth-2">
-                        {% if feature.image %}
-                            <img src="{{ feature.image.url }}" class="img-fluid"
-                                 alt="{{ feature.image.name }}">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        {% endif %}
-
-
-                    </div>
-                    <!--Excerpt-->
-                    <div class="card-body">
-                        <a href="" class="green-text">
-                            <h5 class="font-weight-bold mt-2 mb-3"><i
-                                    class="fas fa-chart-line pr-2"></i>{{ feature.title }}</h5>
-                        </a>
-                        <h4 class="font-weight-bold mb-3">{{ feature.title }}</h4>
-                        <p>{{ feature.article_text_html|safe }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-
-
-        </div>
+        {#            <div class="row d-flex justify-content-center">#}
+        {#            {% for feature in features %}#}
+        {#                <div class="col-md-6 col-xl-5 mb-4">#}
+        {#                    <!--Featured image-->#}
+        {#                    <div class="view overlay rounded z-depth-2">#}
+        {#                        {% if feature.image %}#}
+        {#                            <img src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"#}
+        {#                                 data-src="{{ feature.image.url }}" class="img-fluid"#}
+        {#                                 alt="{{ feature.image.name }}">#}
+        {#                            <a>#}
+        {#                                <div class="mask rgba-white-slight"></div>#}
+        {#                            </a>#}
+        {#                        {% endif %}#}
+        {##}
+        {##}
+        {#                    </div>#}
+        {#                    <!--Excerpt-->#}
+        {#                    <div class="card-body">#}
+        {#                        <a href="" class="green-text">#}
+        {#                            <h5 class="font-weight-bold mt-2 mb-3"><i#}
+        {#                                    class="fas fa-chart-line pr-2"></i>{{ feature.title }}</h5>#}
+        {#                        </a>#}
+        {#                        <h4 class="font-weight-bold mb-3">{{ feature.title }}</h4>#}
+        {#                        <p>{{ feature.article_text_html|safe }}</p>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            {% endfor %}#}
+        {#        </div>#}
     </section>
     <section class="section" id="galley">
         <div class="container-fluid stylish-color-dark">
             {% for year, year_images in images.items %}
                 <section id="section_{{ year }}" class="section-dark">
-
                     {% regroup year_images by location as image_by_location %}
                     {% for location_images in image_by_location %}
                         {% if forloop.first %}
@@ -148,7 +140,8 @@
                             {% if forloop.counter <= 12 %}
                                 <figure class="col-md-4 col-lg-3 col-sm-6">
                                     <a href="{{ location_image.image.url }}" data-size="1600x1067">
-                                        <img src="{{ location_image.image.url }}" class="img-fluid z-depth-1"
+                                        <img src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"
+                                             data-src="{{ location_image.image.url }}" class="img-fluid z-depth-1"
                                              alt="{{ year }}{{ location_images.grouper }}{{ location_image.title }}">
                                     </a>
                                 </figure>
@@ -179,7 +172,9 @@
         <div class="row">
             <div class="col-lg-5 text-center text-lg-left">
                 {% if aboutus.image %}
-                    <img class="img-fluid mx-auto d-block hoverable " src="{{ aboutus.image.url }}"
+                    <img class="img-fluid mx-auto d-block hoverable "
+                         src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"
+                         data-src="{{ aboutus.image.url }}"
                          alt="{{ aboutus.title }}">
                 {% endif %}
             </div>
@@ -188,8 +183,7 @@
                     <div class="col-1">
                         <i class="fas fa-home fa-lg indigo-text"></i>
                     </div>
-                    <div class="col-xl-10 col-md-11 col-10">
-                        <h5 class="font-weight-bold">{{ aboutus.title }}</h5>
+                    <div class="col-xl-10 col-md-11 mt-3">
                         <div class="text-left">
                             {{ aboutus.article_text_html|safe }}
                         </div>
@@ -244,16 +238,7 @@
                 <div class="col-md-4 mb-2 {% if not forloop.counter0|divisibleby:3 %}clearfix d-none d-md-block{% endif %}">
                     <!-- Card -->
                     <div class="card card-cascade narrower card-ecommerce">
-                        {#                        <!-- Card image -->#}
-                        {#                        <div class="view view-cascade overlay">#}
-                        {#                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(39).jpg"#}
-                        {#                                 class="card-img-top"#}
-                        {#                                 alt="sample photo">#}
-                        {#                            <a>#}
-                        {#                                <div class="mask rgba-white-slight"></div>#}
-                        {#                            </a>#}
-                        {#                        </div>#}
-                        {#                        <!-- Card image -->#}
+
                         <!-- Card content -->
                         <div class="card-body card-body-cascade text-center">
                             <!-- Category & Title -->
@@ -304,50 +289,42 @@
                 {{ success }}
             </div>
         {% endif %}
-        <div class="row p-5">
-            <div class="col-md-8 md-0 mb-5">
+        <div class="row">
+            <div class="col-md-7">
                 <h3 class="mt-4"><i class="fas fa-envelope pr-2">Write to us:</i></h3>
 
                 <div class="col-md-12">
                     <form method="post">
                         {% csrf_token %}
                         {{ form.media }}
-                        {% for foo in form %}
-                            {% if foo.name == "first_name" %}
+                        {% for field in form %}
+                            {% if field.name == "first_name" %}
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="md-form mb-0">
-                                            {{ foo }}
+                                        <div class="md-form">
+                                            {{ field }}
                                         </div>
                                     </div>
-                                    {% elif foo.name == "last_name" %}
+                                    {% elif field.name == "last_name" %}
                                     <div class="col-md-6">
-                                        <div class="md-form mb-0 ">
-                                            {{ foo }}
+                                        <div class="md-form">
+                                            {{ field }}
                                         </div>
                                     </div>
                                 </div>
-
                             {% else %}
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class=" md-form mb-0 ">
-                                            {{ foo }}
-                                        </div>
-                                    </div>
+                                <div class=" md-form">
+                                    {{ field }}
                                 </div>
                             {% endif %}
-
                         {% endfor %}
-
-
                         <button type="submit" class="btn btn-default">Send Message</button>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-5">
                 <div class="contact text-center h-100 white-text">
-                    <h3 class="my-4 pb-2">Contact Information</h3>
+                    <h3 class="my-4 pb-2 pt-4">Contact Information</h3>
                     <ul class="text-lg-left list-unstyled ml-4">
                         <li>
                             <p><i class="fas fa-map-marker-alt pr-2"></i> 6639 Pleasant Valley Rd <br/>Friendship NY
@@ -355,11 +332,11 @@
                             </p>
                         </li>
                         <li>
+                            <p>Robert Mack</p>
                             <p><i class="fas fa-phone pr-2"></i>+ 01 585 307 0444</p>
                         </li>
                         <li>
-                            <p><i class="fas fa-envelope pr-2"></i><a href="mailto:callbobmack@live.com">
-                                callbobmack@live.com</a></p>
+                            <p><i class="fas fa-envelope pr-2"></i>callbobmack@live.com</p>
                         </li>
                     </ul>
                 </div>
@@ -389,15 +366,17 @@
 <script type="text/javascript" src="{% static "main/js/bootstrap.min.js" %}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{% static "main/js/mdb.min.js" %}"></script>
+<script src="{% static 'main/js/custom-modules/jQuery.loadScroll.js' %}"></script>
 <script>
     new WOW().init();
     $(function () {
         $("#mdb-lightbox-ui").load("{% static 'main/mdb-addons/mdb-lightbox-ui.html' %}");
 
-    })
+    });
     $(document).ready(function () {
         $('.mdb-select').materialSelect();
     });
+    $('img').loadScroll(500);
 </script>
 
 </body>

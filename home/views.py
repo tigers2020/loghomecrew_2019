@@ -14,13 +14,35 @@ from home.forms import ContactForm
 from loghomecrew import settings
 
 
+def groupby_queryset_with_fields(queryset, fields):
+    fields_qs = {}
+    from itertools import groupby
+    for field in fields:
+        queryset = queryset.order_by(field)
+
+        def getter(obj):
+            related_names = field.split('__')
+            for related_name in related_names:
+                try:
+                    obj = getattr(obj, related_name)
+                except AttributeError:
+                    obj = None
+            return obj
+
+        fields_qs[field] = [{'grouper': key, 'list': list(group)}
+                            for key, group in groupby(queryset, lambda x: getattr(x, field)
+            if '__' not in field else getter(x))]
+    return fields_qs
+
+
 class IndexView(generic.TemplateView):
     template_name = 'home/index.html'
+
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
 
-        images = BuildingImages.objects.filter(published=True).order_by('date_build').order_by('-location')
+        images = BuildingImages.objects.filter(published=True).order_by('-date_build_year').order_by('-location')
         years = set()
         img = {}
         for image in images:
@@ -28,7 +50,7 @@ class IndexView(generic.TemplateView):
         years = list(years)
         years.sort(reverse=True)
         for year in years:
-            img.update({year: images.filter(date_build_year=year)})
+            img.update({year: images.filter(date_build_year=year).order_by('-date_build_year').order_by('-location')})
 
         text = ArticleText.objects.filter(publish=True)
 
@@ -74,10 +96,6 @@ class IndexView(generic.TemplateView):
         return context
 
 
-class ContactUsView(generic.TemplateView):
-    template_name = 'home/contact_us.html'
-
-
 def contact(request):
     thank_you = {}
     if request.method == 'GET':
@@ -113,12 +131,12 @@ def contact_failed(request):
 
 
 class SiteSitemap(Sitemap):
-    changefreq = "daily"
+    changefreq = "monthly"
     priority = 1.0
     lastmod = datetime.datetime.now()
 
     def items(self):
-        return ['index_view', 'about_us', 'galleries_index', 'faq_view', 'contact_us']
+        return ['index_view']
 
     def location(self, obj):
         return reverse(obj)
