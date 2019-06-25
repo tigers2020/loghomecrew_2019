@@ -1,3 +1,2 @@
 User-agent:*
-Disallow: /contact_us
 Sitemap:http://www.loghomecrew.net/Sitemap.xml
