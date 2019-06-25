@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html lang="en">
 {% load staticfiles %}
 <head>
@@ -367,7 +367,7 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{% static "main/js/mdb.min.js" %}"></script>
 <script type="javascript" src="{% static 'main/js/custom-modules/jQuery.loadScroll.js' %}"></script>
-<script>
+<script type="javascript">
     new WOW().init();
     $(function () {
         $("#mdb-lightbox-ui").load("{% static 'main/mdb-addons/mdb-lightbox-ui.html' %}");
