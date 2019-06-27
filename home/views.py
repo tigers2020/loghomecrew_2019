@@ -42,7 +42,7 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
 
-        images = BuildingImages.objects.filter(published=True).order_by('-date_build_year').order_by('-location')
+        images = BuildingImages.objects.filter(published=True).order_by('-date_build').order_by('-location')
         years = set()
         img = {}
         for image in images:
@@ -50,7 +50,7 @@ class IndexView(generic.TemplateView):
         years = list(years)
         years.sort(reverse=True)
         for year in years:
-            img.update({year: images.filter(date_build_year=year).order_by('-date_build_year').order_by('-location')})
+            img.update({year: images.filter(date_build_year=year).order_by('-date_build').order_by('-location')})
 
         text = ArticleText.objects.filter(publish=True)
 
