@@ -16,6 +16,19 @@
             }
         })();
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57699232-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -131,14 +144,14 @@
                     <div class="row wow fadeIn elegant-color-dark p-3">
                         {% for location_image in location_images.list %}
 
-                                <figure class="col-md-4 col-lg-3 col-sm-6">
-                                    {% thumbnail location_image.image "500x280" as im %}
-                                        <a href="{{ location_image.image.url }}" data-size="1920x1080">
-                                        <img src="{{ im.url }}" class="img-fluid z-depth-1"
-                                             alt="{{ year }}-{{ location_images.grouper }}-{{ location_image.date_build }}">
-                                    {% endthumbnail %}
-                                    </a>
-                                </figure>
+                            <figure class="col-md-4 col-lg-3 col-sm-6">
+                                {% thumbnail location_image.image "500x280" as im %}
+                                    <a href="{{ location_image.image.url }}" data-size="1920x1080">
+                                    <img src="{{ im.url }}" class="img-fluid z-depth-1"
+                                         alt="{{ year }}-{{ location_images.grouper }}-{{ location_image.date_build }}">
+                                {% endthumbnail %}
+                                </a>
+                            </figure>
                         {% endfor %}
                     </div>
                     {% if forloop.last %}
