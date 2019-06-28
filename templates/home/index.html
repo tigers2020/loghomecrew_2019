@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load staticfiles %}
+{% load thumbnail %}
 <head>
     <link rel="stylesheet" type="text/css" href="../../static/main/css/base.css"/>
     <script>
@@ -115,7 +116,7 @@
         <div class="container-fluid stylish-color-dark">
             {% for year, year_images in images.items %}
                 <section id="section_{{ year }}" class="section-dark">
-                    {% regroup year_images by location as image_by_location %}
+                    {% regroup year_images|dictsortreversed:"date_build" by location as image_by_location %}
                     {% for location_images in image_by_location %}
                         {% if forloop.first %}
                             {#                            <h1 class="section-title text-center white-text wow fadeIn">{{ year }}</h1>#}
@@ -129,15 +130,15 @@
                     </h2>
                     <div class="row wow fadeIn elegant-color-dark p-3">
                         {% for location_image in location_images.list %}
-                            {% if forloop.counter <= 12 %}
+
                                 <figure class="col-md-4 col-lg-3 col-sm-6">
-                                    <a href="{{ location_image.image.url }}" data-size="1600x1067">
-                                        <img src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"
-                                             data-src="{{ location_image.image.url }}" class="img-fluid z-depth-1"
-                                             alt="{{ year }}{{ location_images.grouper }}{{ location_image.title }}">
+                                    {% thumbnail location_image.image "500x280" as im %}
+                                        <a href="{{ location_image.image.url }}" data-size="1920x1080">
+                                        <img src="{{ im.url }}" class="img-fluid z-depth-1"
+                                             alt="{{ year }}-{{ location_images.grouper }}-{{ location_image.date_build }}">
+                                    {% endthumbnail %}
                                     </a>
                                 </figure>
-                            {% endif %}
                         {% endfor %}
                     </div>
                     {% if forloop.last %}
@@ -165,8 +166,7 @@
             <div class="col-lg-5 text-center text-lg-left">
                 {% if aboutus.image %}
                     <img class="img-fluid mx-auto d-block hoverable "
-                         src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"
-                         data-src="{{ aboutus.image.url }}"
+                         src="{{ aboutus.image.url }}"
                          alt="{{ aboutus.title }}">
                 {% endif %}
             </div>
@@ -368,7 +368,6 @@
     $(document).ready(function () {
         $('.mdb-select').materialSelect();
     });
-    $('img').loadScroll(500);
 </script>
 
 </body>
