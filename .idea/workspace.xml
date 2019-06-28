@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a24847f-fd05-42ee-b161-937bd12186e8" name="Default" comment="update 6-24-19 : fix sitemap">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/116ed2ef-813b-4a79-9b94-4c51e8fc50bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/116ed2ef-813b-4a79-9b94-4c51e8fc50bc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galleries/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/galleries/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/galleries/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/galleries/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loghomecrew/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/loghomecrew/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/11/media/20181128_160833.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/11/media/20181128_160833_thumb.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/12/media/20181220_091704_001.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/12/media/20181220_091704_001_piqz3zm.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/12/media/20181220_091704_001_thumb.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/12/media/20181220_091704_001_thumb_hZJYB54.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/6/media/20180620_170236.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/NY/media/2018/media/6/media/20180620_170236_thumb.jfif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,13 +45,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="galleries_buildingimages: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -76,20 +59,19 @@
             <state relative-caret-position="350">
               <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#2314#3184#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="137" column="119" selection-start-line="137" selection-start-column="119" selection-end-line="137" selection-end-column="119" />
+            <state relative-caret-position="285">
+              <caret line="51" column="79" lean-forward="true" selection-start-line="51" selection-start-column="79" selection-end-line="51" selection-end-column="79" />
               <folding>
-                <element signature="e#1786#1791#1#HTML" expanded="true" />
+                <element signature="e#1807#1812#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +80,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="380">
+              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/thumbnail_kvstore">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="4ad370e3-6545-4c3b-b142-00096dcd2970">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -107,8 +100,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+            <state relative-caret-position="399">
+              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+              <folding>
+                <element signature="e#315#324#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/galleries/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="243">
+              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -150,18 +146,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="319">
               <caret line="89" column="26" lean-forward="true" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
-              <folding>
-                <element signature="e#89#118#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="mock:///">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -247,10 +231,10 @@
         <option value="$PROJECT_DIR$/galleries/views.py" />
         <option value="$PROJECT_DIR$/loghomecrew/settings.py" />
         <option value="$PROJECT_DIR$/home/views.py" />
-        <option value="$PROJECT_DIR$/templates/home/index.html" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/galleries/models.py" />
         <option value="$PROJECT_DIR$/galleries/admin.py" />
+        <option value="$PROJECT_DIR$/templates/home/index.html" />
       </list>
     </option>
   </component>
@@ -313,77 +297,7 @@
             <path>
               <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="main page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="main page" type="462c0819:PsiDirectoryNode" />
-              <item name="2040" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="main page" type="462c0819:PsiDirectoryNode" />
-              <item name="2040" type="462c0819:PsiDirectoryNode" />
-              <item name="our-services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="main page" type="462c0819:PsiDirectoryNode" />
-              <item name="2017914" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="MD" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="NH" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="NY" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="UW" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="VA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="WA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loghomecrew_2019" type="462c0819:PsiDirectoryNode" />
-              <item name="mediafiles" type="462c0819:PsiDirectoryNode" />
-              <item name="WI" type="462c0819:PsiDirectoryNode" />
+              <item name="loghomecrew" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loghomecrew_2019" type="b2602c69:ProjectViewProjectNode" />
@@ -802,7 +716,42 @@
       <option name="project" value="LOCAL" />
       <updated>1557663469700</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update 6-27-19 : optimize">
+      <created>1561634201651</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1561634201651</updated>
+    </task>
+    <task id="LOCAL-00033" summary="update 6-24-19 : add thumbnails">
+      <created>1561684135730</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1561684135730</updated>
+    </task>
+    <task id="LOCAL-00034" summary="update 6-27-19 : fix index">
+      <created>1561684453548</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1561684453548</updated>
+    </task>
+    <task id="LOCAL-00035" summary="update 6-27: add google analytic code">
+      <created>1561687593826</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1561687593826</updated>
+    </task>
+    <task id="LOCAL-00036" summary="update 6-27: add google analytics">
+      <created>1561687686810</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1561687686810</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -817,7 +766,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148873000" />
+    <option name="totallyTimeSpent" value="155735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,8 +817,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/loghomecrew" />
     </ignored-roots>
-    <MESSAGE value="git" />
-    <MESSAGE value="fix gallery" />
     <MESSAGE value="gallery lightbox fix" />
     <MESSAGE value="add admin files" />
     <MESSAGE value="update" />
@@ -889,12 +836,17 @@
     <MESSAGE value="update 5-11-19 : fix thumbnail save problem" />
     <MESSAGE value="update 5-10-19 : remove year header" />
     <MESSAGE value="update 5-10-19 : change logo, add footer," />
-    <option name="LAST_COMMIT_MESSAGE" value="update 5-10-19 : change logo, add footer," />
+    <MESSAGE value="update 6-24-19 : fix sitemap" />
+    <MESSAGE value="update 6-27-19 : optimize" />
+    <MESSAGE value="update 6-24-19 : add thumbnails" />
+    <MESSAGE value="update 6-27-19 : fix index" />
+    <MESSAGE value="update 6-27: add google analytic code" />
+    <MESSAGE value="update 6-27: add google analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 6-27: add google analytics" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/os.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/ntpath.py" />
     <entry file="file://$PROJECT_DIR$/static/main/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1085,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mediafiles/cache/0d/a9/0da9f9f8e2bb0ae56c5b6ba799927a88.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1129,26 +1074,8 @@
         <state relative-caret-position="350">
           <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
             <element signature="e#2314#3184#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="137" column="119" selection-start-line="137" selection-start-column="119" selection-end-line="137" selection-end-column="119" />
-          <folding>
-            <element signature="e#1786#1791#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -1172,18 +1099,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="89" column="26" lean-forward="true" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
-          <folding>
-            <element signature="e#89#118#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/galleries/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="243">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/thumbnail_kvstore">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="4ad370e3-6545-4c3b-b142-00096dcd2970">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loghomecrew/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+          <folding>
+            <element signature="e#315#324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="51" column="79" lean-forward="true" selection-start-line="51" selection-start-column="79" selection-end-line="51" selection-end-column="79" />
+          <folding>
+            <element signature="e#1807#1812#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
