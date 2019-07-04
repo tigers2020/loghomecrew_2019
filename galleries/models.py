@@ -1,3 +1,5 @@
+import os
+
 try:
     from cStringIO import StringIO
 except ImportError:
@@ -12,6 +14,7 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 from sorl.thumbnail import ImageField, get_thumbnail
+from mptt.models import MPTTModel, TreeForeignKey
 
 
 # Create your models here.
@@ -31,17 +34,30 @@ class Location(models.Model):
 
 
 def image_folder(instance, filename):
-    return '{}/{}/{}/{}'.format(instance.location.state, instance.date_build.year, instance.date_build.month, filename)
+    path = os.path.join(str(instance.date_build.year), instance.location.state, filename)
+    return path
 
 
-class Category(models.Model):
-    parent = models.ForeignKey('self', null=True, blank=True, db_index=True, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, allow_unicode=True, blank=True)
-    image = models.ImageField(blank=True)
+class LogHomeModel(models.Model):
+    title = models.CharField(max_length=64)
+    bedroom = models.IntegerField(default=1)
+    bathroom = models.FloatField()
+    story = models.FloatField(default=1)
+    wide = models.FloatField()
+    deep = models.FloatField()
+    description = RichTextField(blank=True, default="")
+
+
+class Category(MPTTModel):
+    title = models.CharField(max_length=64)
+    parent = TreeForeignKey('self', null=True, blank=True, db_index=True, on_delete=models.CASCADE,
+                            related_name="children")
     description = RichTextField(blank=True)
     date = models.DateField(auto_now_add=True)
     published = models.BooleanField(default=True)
+
+    class MPTTMeta:
+        order_insertion_by = ['title']
 
     def __str__(self):
         return self.title
@@ -64,7 +80,7 @@ def get_exif(fn):
 
 class BuildingImages(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
-    title = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=64, blank=True, null=True)
     image = ImageField(upload_to=image_folder)
     published = models.BooleanField(default=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
@@ -88,10 +104,14 @@ class BuildingImages(models.Model):
             image_exif = get_exif(self.image)
 
             # saving datas
-            if 'DateTime' in image_exif:
-                created_date = datetime.strptime(image_exif['DateTime'], '%Y:%m:%d %H:%M:%S')
-                self.date_build = created_date
-                self.date_build_year = created_date.year
+            if 'DateTimeOriginal' in image_exif:
+                created_date = datetime.strptime(image_exif['DateTimeOriginal'], '%Y:%m:%d %H:%M:%S')
+            elif "DateTimeDigitized" in image_exif:
+                created_date = datetime.strptime(image_exif['DateTimeDigitized'], '%Y:%m:%d %H:%M:%S')
+            else:
+                created_date = datetime.now()
+            self.date_build = created_date
+            self.date_build_year = created_date.year
 
         super(BuildingImages, self).save(*args, **kwargs)
 

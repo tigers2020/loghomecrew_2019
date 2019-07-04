@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     'sorl.thumbnail',
+    'mptt',
 ]
 
 MIDDLEWARE = [
