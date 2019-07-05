@@ -1,55 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load staticfiles %}
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../../static/main/css/base.css"/>
+  <script>
+      (function () {
+
+          var scripts = ["/static/general/bf-core.min.js", "/static/containers/PSD625.js"];
+          for (var i = 0; i < scripts.length; i++) {
+              var script = document.createElement("script");
+              script.src = "//brandflow.net" + scripts[i] + "?ts=" + Date.now() + "#";
+              script.async = false;
+              document.head.appendChild(script);
+          }
+      })();
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57699232-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-57699232-1', {'optimize_id': 'GTM-KZJM46N'});
+  </script>
+  <!-- Anti-flicker snippet (recommended)  -->
+  <style>.async-hide {
+    opacity: 0 !important
+  } </style>
+  <script>(function (a, s, y, n, c, h, i, d, e) {
+      s.className += ' ' + y;
+      h.start = 1 * new Date;
+      h.end = i = function () {
+          s.className = s.className.replace(RegExp(' ?' + y), '')
+      };
+      (a[n] = a[n] || []).hide = h;
+      setTimeout(function () {
+          i();
+          h.end = null
+      }, c);
+      h.timeout = c;
+  })(window, document.documentElement, 'async-hide', 'dataLayer', 4000,
+      {'OPT_CONTAINER_ID': true});</script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+          'gtm.start':
+              new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-NZ9G9LZ');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="title" content="R & J Log Home Construction - We Building Best House For You">
+  <title>R & J Log Home Construction - We Building Best House For You</title>
     <meta name="description"
-          content="{% block metadata %}We offer the Highest Quality Log Home Construction. We at R&J Construction company take our work very seriously. If you are not sure where to start your log home project, you may want to start with R&J Construction logs home kit assembly to get the job going{% endblock %}">
-    <meta name="keywords" content="loghome, small, log, home, build, kit, new york, ">
+          content="We offer the Highest Quality Log Home Construction. We take our work very seriously. start with R&J Construction logs home kit assembly to get the job going">
+  <meta name="keywords"
+        content="log home, kits, plans, builders, log homes, for sale, maintenance, stain, ny, agency, guys, show, gallery, new york, companies, consturrction, contractors, cost, care,">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static "main/css/bootstrap.min.css" %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static "main/css/mdb.min.css" %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'main/css/base.css' %}">
+  <link href="{% static "main/css/style.css" %}" rel="stylesheet">
+  <link href="{% static "main/css/contact_us.css" %}" rel="stylesheet">
+  {% block custom_css %}
 
-    <title>{% block title %}{% endblock %} R & J Log Home Construction - We Building Best House For You</title>
-    {% load static %}
-    {% load staticfiles %}
-    <!-- Favicon -->
-    <link rel="icon" href="{% static 'main/images/favicon.png' %}" type="image/x-icon"/>
-    <!-- Bootstrap CSS -->
-    <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'main/css/mdb.min.css' %}" rel="stylesheet">
-    <!-- Animate CSS -->
-    <link href="{% static 'main/vendors/animate/animate.css' %}" rel="stylesheet">
-    <!-- Icon CSS-->
-    <link href="{% static 'main/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-    <!-- Camera Slider -->
-    <link href="{% static 'main/vendors/camera-slider/camera.css' %}" rel="stylesheet">
-    <!-- Owlcarousel CSS-->
-    <link rel="stylesheet" href="{% static 'main/vendors/owl_carousel/owl.carousel.css' %}" media="all">
-
-    <!--Theme Styles CSS-->
-    <link href="{% static 'main/css/style.css' %}" media="all" rel="stylesheet">
-
-    <!--Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Playball" rel="stylesheet">
-
-    <link href="{% static 'main/css/base.css' %}" rel="stylesheet">
-    {% block custom_css %}
-
-    {% endblock %}
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
+  {% endblock %}
 </head>
-<body>
-{% include 'home/navigator.html' %}
+<body class="black-skin" data-gr-c-s-loaded="true">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ9G9LZ"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar top-nav-collapse">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index_view' %}" id="main-logo"><span class="red-text">R</span><span
+        class="grey-text">&amp;</span><span class="blue-text">J</span> Construction</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto smooth-scroll">
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#feature">Features</a>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<main>
-    {% block main %}
-    {% endblock %}
+        </li>
+        <li class="nav-item dropdown btn-group">
+          <a class="nav-link dropdown-toggle waves-effect waves-light" type="button" id="dropdownMenu1"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galley<span
+              class="sr-only">(current)</span></a>
+
+          <!--Menu-->
+          <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+            {% for year in years %}
+              {% if forloop.first %}
+                <a class="dropdown-item waves-effect waves-light" href="#section_{{ year }}"
+                   data-offset="130">{{ year }}</a>
+              {% else %}
+                <a class="dropdown-item waves-effect waves-light" href="#section_{{ year }}"
+                   data-offset="80">{{ year }}</a>
+              {% endif %}
+
+            {% endfor %}
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#aboutus" data-offset="100">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#testimonials" data-offset="110">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="#contact" data-offset="110">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="vh-100">
+  {% block main %}
+
+  {% endblock %}
+
 </main>
 <footer class="footer_area">
 
@@ -61,60 +159,20 @@
     <div class="copyright_area">
         Copyright 2016 - {% now "Y" %} All rights reserved.
     </div>
-
 </footer>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none"
-     style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
-    <defs>
-        <style type="text/css"></style>
-    </defs>
-    <text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">
-        500x500
-    </text>
-</svg>
-<!-- Latest compiled and minified JavaScript -->
-<!-- jQuery JS -->
-<script src="{% static 'main/js/jquery-1.12.0.min.js' %}"></script>
-{#<script src="{% static 'main/js/jquery-migrate-3.0.0.min.js' %}"></script>#}
-{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
-<!-- Bootstrap JS -->
-<script src="{% static "main/js/bootstrap.min.js" %}"></script>
-<script src\
-"{% static "main/js/mdb.min.js" %}></script>
-<!-- Animate JS -->
-<
-script
-src = "{% static "main/vendors/animate/wow.min.js" %}" ></script>
-<!-- Camera Slider -->
-<script src="{% static "main/vendors/camera-slider/jquery.easing.1.3.js" %}"></script>
-<script src="{% static 'main/vendors/camera-slider/camera.min.js' %}"></script>
-<!-- Isotope JS -->
-<script src="{% static 'main/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
-<script src="{% static 'main/vendors/isotope/isotope.pkgd.min.js' %}"></script>
-<!-- Progress JS -->
-<script src="{% static 'main/vendors/Counter-Up/jquery.counterup.min.js' %}"></script>
-<script src="{% static 'main/vendors/Counter-Up/waypoints.min.js' %}"></script>
-<!-- Owlcarousel JS -->
-<script src="{% static 'main/vendors/owl_carousel/owl.carousel.min.js' %}"></script>
-<!-- Stellar JS -->
-<script src="{% static 'main/vendors/stellar/jquery.stellar.js' %}"></script>
-<!-- Theme JS -->
-<script src="{% static 'main/js/theme.js' %}"></script>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static "main/js/jquery-1.12.0.min.js" %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static "main/js/popper.min.js" %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static "main/js/bootstrap.min.js" %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static "main/js/mdb.min.js" %}"></script>
 <script src="{% static 'main/js/custom-modules/jQuery.loadScroll.js' %}"></script>
-<script>
-    $('img').loadScroll(500);
-</script>
-
-{% block custom_js %}
+{% block scripts %}
 
 {% endblock %}
-
 </body>
 </html>

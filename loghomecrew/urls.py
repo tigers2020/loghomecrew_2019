@@ -20,8 +20,6 @@ from django.contrib.sitemaps.views import sitemap
 from django.http import HttpResponse
 from django.views.generic import RedirectView
 
-from article import views as article_views
-from galleries import views as gallery_views
 from home import views as home_views
 from home.views import SiteSitemap
 from loghomecrew import settings
@@ -36,15 +34,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/main/favicon/favicon.ico')),
     url(r'^$', home_views.IndexView.as_view(), name='index_view'),
-    url(r'^aboutus/$', article_views.AboutUsView.as_view(), name='about_us'),
-    url(r'^faq/$', article_views.FaQView.as_view(), name='faq_view'),
-    url(r'^galleries$', gallery_views.GalleriesIndexView.as_view(), name='galleries_index'),
-    # url(r'^galleries/', include('galleries.urls')),
-    # url(r'^article/', include('article.urls')),
-    url(r'^contact_us/', home_views.contact, name='contact_us'),
     url(r'^contact_us/send_failed', home_views.contact_failed, name='failed'),
     url(r'^contact_us/success', home_views.contact_success, name='success'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'home.views.handler404'
+handler500 = 'home.views.handler500'

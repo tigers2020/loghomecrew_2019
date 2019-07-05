@@ -3,7 +3,7 @@ import datetime
 from django.contrib.sitemaps import Sitemap
 from django.core.mail import send_mail
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.urls import reverse
 from django.views import generic
 
@@ -37,7 +37,6 @@ def groupby_queryset_with_fields(queryset, fields):
 
 class IndexView(generic.TemplateView):
     template_name = 'home/index.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
@@ -128,6 +127,18 @@ def contact_success(request):
 
 def contact_failed(request):
     return HttpResponse("Send Email Failed")
+
+
+def handler404(request, exception, template_name="404.html"):
+    response = render_to_response("404.html")
+    response.status_code = 404
+    return response
+
+
+def handler500(request, exception, template_name="500.html"):
+    response = render_to_response("500.html")
+    response.status_code = 500
+    return response
 
 
 class SiteSitemap(Sitemap):
