@@ -92,7 +92,7 @@ class BuildingImages(models.Model):
 
     def image_tag(self):
         im = get_thumbnail(self.image, '200x100', crop='center')
-        return mark_safe('<img src="/media/%s" width=200px />' % im)
+        return mark_safe('<img src="%s" width=250px />' % im.url)
 
     image_tag.allow_tags = True
 
