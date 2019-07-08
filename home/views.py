@@ -8,7 +8,7 @@ from django.urls import reverse
 from django.views import generic
 
 from article.models import ArticleText
-from galleries.models import BuildingImages
+from galleries.models import Category
 # Create your views here.
 from home.forms import ContactForm
 from loghomecrew import settings
@@ -40,24 +40,11 @@ class IndexView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-
-        images = BuildingImages.objects.filter(published=True).order_by('-date_build').order_by('-location')
-        years = set()
-        img = {}
-        for image in images:
-            years.add(image.date_build_year)
-        years = list(years)
-        years.sort(reverse=True)
-        for year in years:
-            img.update({year: images.filter(date_build_year=year).order_by('-date_build').order_by('-location')})
-
         text = ArticleText.objects.filter(publish=True)
-
         features = text.filter(category=1)
         testimonials = text.filter(category=3)
         services = text.filter(category=5)
         aboutus = text.get(title="About Us")
-
         testimonial_count = testimonials.count()
 
         count = int(testimonial_count / 3)
@@ -84,8 +71,8 @@ class IndexView(generic.TemplateView):
 
         context['form'] = form
         context['success'] = thankyou
-        context['years'] = years
-        context['images'] = img
+
+        context['categories'] = Category.objects.filter(published=True).order_by('-year')
         context['aboutus'] = aboutus
 
         context['features'] = features

@@ -66,8 +66,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="title" content="R & J Log Home Construction - We Building Best House For You">
   <title>R & J Log Home Construction - We Building Best House For You</title>
-    <meta name="description"
-          content="We offer the Highest Quality Log Home Construction. We take our work very seriously. start with R&J Construction logs home kit assembly to get the job going">
+  <meta name="description"
+        content="We offer the Highest Quality Log Home Construction. We take our work very seriously. start with R&J Construction logs home kit assembly to get the job going">
   <meta name="keywords"
         content="log home, kits, plans, builders, log homes, for sale, maintenance, stain, ny, agency, guys, show, gallery, new york, companies, consturrction, contractors, cost, care,">
   <meta name="robots" content="index, follow">
@@ -84,6 +84,7 @@
   <link href="{% static 'main/css/base.css' %}">
   <link href="{% static "main/css/style.css" %}" rel="stylesheet">
   <link href="{% static "main/css/contact_us.css" %}" rel="stylesheet">
+  <link href="{% static "main/vendors/lightGallery/css/lightgallery.min.css" %}" rel="stylesheet">
   {% block custom_css %}
 
   {% endblock %}
@@ -109,31 +110,42 @@
           <a class="nav-link waves-effect waves-light" href="#feature">Features</a>
 
         </li>
-        <li class="nav-item dropdown btn-group">
+        <li class="nav-item dropdown mega-dropdown btn-group">
           <a class="nav-link dropdown-toggle waves-effect waves-light" type="button" id="dropdownMenu1"
              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Galley<span
               class="sr-only">(current)</span></a>
 
           <!--Menu-->
-          <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
-            {% for year in years %}
-              {% if forloop.first %}
-                <a class="dropdown-item waves-effect waves-light" href="#section_{{ year }}"
-                   data-offset="130">{{ year }}</a>
-              {% else %}
-                <a class="dropdown-item waves-effect waves-light" href="#section_{{ year }}"
-                   data-offset="80">{{ year }}</a>
-              {% endif %}
-
-            {% endfor %}
+          <div class="dropdown-menu mega-menu v-1 z-depth-1 special-color py-5 px-3" aria-labelledby="dropdownMenu1">
+            <div class="container">
+              <div class="row">
+                {% for category in categories %}
+                  {% if forloop.first %}
+                    <div class="col-md-3 sub-menu mb-xl-0 mb-4">
+                    {#                    <h6 CLASS="sub-title text-uppercase font-weight-bold white-text">{{ category.year }}</h6>#}
+                    <ul class="list-unstyled">
+                  {% endif %}
+                <a class="dropdown-item waves-effect waves-light text-white"
+                   href="#{{ category.location.state }}_{{ category.id }}"
+                   data-offset="{% if forloop.first %}130{% else %}80{% endif %}">{{ category.title }}</a>
+                {% if forloop.counter|divisibleby:4 %}
+                  </ul>
+                  </div>
+                  <div class="col-md-3 sub-menu mb-xl-0 mb-4">
+                  {#                  <h6 CLASS="sub-title text-uppercase font-weight-bold white-text">{{ category.year }}</h6>#}
+                  <ul class="list-unstyled">
+                {% endif %}
+                {% if forloop.last %}
+                  </ul>
+                  </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link waves-effect waves-light" href="#aboutus" data-offset="100">About Us</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#testimonials" data-offset="110">Testimonials</a>
         </li>
         <li class="nav-item">
           <a class="nav-link waves-effect waves-light" href="#contact" data-offset="110">Contact</a>
@@ -143,22 +155,19 @@
   </div>
 </nav>
 
-<main class="vh-100">
+<main class="h-100">
   {% block main %}
-
   {% endblock %}
-
 </main>
 <footer class="footer_area">
+  <div class="footer_row row">
+    {% block about_company %}
+    {% endblock %}
+  </div>
 
-    <div class="footer_row row">
-        {% block about_company %}
-        {% endblock %}
-    </div>
-
-    <div class="copyright_area">
-        Copyright 2016 - {% now "Y" %} All rights reserved.
-    </div>
+  <div class="copyright_area">
+    Copyright 2003 - {% now "Y" %} All rights reserved.
+  </div>
 </footer>
 
 <!-- SCRIPTS -->
@@ -171,6 +180,9 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{% static "main/js/mdb.min.js" %}"></script>
 <script src="{% static 'main/js/custom-modules/jQuery.loadScroll.js' %}"></script>
+<script src="{% static 'main/vendors/lightGallery/js/lightgallery-all.min.js' %}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="{% static 'main/vendors/lazy_load/lazyload.min.js' %}"></script>
 {% block scripts %}
 
 {% endblock %}

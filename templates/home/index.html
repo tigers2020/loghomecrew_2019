@@ -4,84 +4,63 @@
 
 {% block main %}
   <!-- Start your project here-->
-  <main id="home" class="mt-5">
-  <section id="feature" class="section feature-box pt-4 pb-3 px-5 rgba-blue-grey-light">
+  <section id="feature" class="section feature-box pt-4 pb-3 px-5 rgba-blue-grey-light mt-5">
     <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-4 wow fadeIn"> We Build Your Dream House </h3>
-    {#            <div class="row d-flex justify-content-center">#}
-    {#            {% for feature in features %}#}
-    {#                <div class="col-md-6 col-xl-5 mb-4">#}
-    {#                    <!--Featured image-->#}
-    {#                    <div class="view overlay rounded z-depth-2">#}
-    {#                        {% if feature.image %}#}
-    {#                            <img src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"#}
-    {#                                 data-src="{{ feature.image.url }}" class="img-fluid"#}
-    {#                                 alt="{{ feature.image.name }}">#}
-    {#                            <a>#}
-    {#                                <div class="mask rgba-white-slight"></div>#}
-    {#                            </a>#}
-    {#                        {% endif %}#}
-    {##}
-    {##}
-    {#                    </div>#}
-    {#                    <!--Excerpt-->#}
-    {#                    <div class="card-body">#}
-    {#                        <a href="" class="green-text">#}
-    {#                            <h5 class="font-weight-bold mt-2 mb-3"><i#}
-    {#                                    class="fas fa-chart-line pr-2"></i>{{ feature.title }}</h5>#}
-    {#                        </a>#}
-    {#                        <h4 class="font-weight-bold mb-3">{{ feature.title }}</h4>#}
-    {#                        <p>{{ feature.article_text_html|safe }}</p>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            {% endfor %}#}
-    {#        </div>#}
-  </section>
-  <section class="section" id="galley">
-    <div class="container-fluid stylish-color-dark">
-      {% for year, year_images in images.items %}
-        <section id="section_{{ year }}" class="section-dark">
-          {% regroup year_images|dictsortreversed:"date_build" by location as image_by_location %}
-          {% for location_images in image_by_location %}
-            {% if forloop.first %}
-              {#                            <h1 class="section-title text-center white-text wow fadeIn">{{ year }}</h1>#}
-              <div class="row wow fadeIn">
-              <div class="col-md-12 elegant-color">
-              <div id="mdb-lightbox-ui"></div>
-              <div class="mdb-lightbox" data-pswp-udi="{{ forloop.counter }}">
+    <div class="row d-flex justify-content-center">
+      {% for feature in features %}
+        <div class="col-md-6 col-xl-5 mb-4">
+          <!--Featured image-->
+          <div class="view overlay rounded z-depth-2">
+            {% if feature.image %}
+              <img src="https://via.placeholder.com/500x280?text=RJ+Construction,+loading+Image"
+                   data-src="{{ feature.image.url }}" class="img-fluid"
+                   alt="{{ feature.image.name }}">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
             {% endif %}
-          <h2 class=" white-text wow fadeIn text-center pt-2">
-            {{ location_images.grouper }}
-          </h2>
-          <div class="row wow fadeIn elegant-color-dark p-3">
-            {% for location_image in location_images.list %}
-              <figure class="figure col-md-4 col-lg-3 col-sm-6">
-                {% thumbnail location_image.image "500x280" as im %}
-                  <a href="{{ location_image.image.url }}" data-size="1920x1080">
-                  <img src="{{ im.url }}" class="img-thumbnail z-depth-1"
-                       alt="{{ year }}-{{ location_images.grouper }}-{{ location_image.date_build }}">
+
+
+          </div>
+          <!--Excerpt-->
+          <div class="card-body">
+            <a href="#" class="green-text">
+              <h5 class="font-weight-bold mt-2 mb-3"><i
+                  class="fas fa-chart-line pr-2"></i>{{ feature.title }}</h5>
+            </a>
+            <p>{{ feature.article_text_html|safe }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  <section class="section-white" id="category_gallery">
+    <div class="container-fluid stylish-color-dark">
+      {% for category in categories %}
+        <h2 class="white-text h2-responsive wow fadeIn text-center p-2">
+          {{ category.title }}
+        </h2>
+        <ul id="{{ category.location.state }}_{{ category.id }}" class="list-unstyled row elegant-color-dark py-4">
+          {% for image in category.get_image_url %}
+            <li class="col-md-4 col-lg-3 col-xl-2 col-sm-6 col-6 text-center"
+                data-responsive=""
+                data-src="{{ image.url }}"
+            >
+              <figure class="figure">
+                {% thumbnail image "250" as im %}
+                  <a href="">
+                  <img src="https://via.placeholder.com/500x280?text=RJ+Construction"
+                       data-src="{{ im.url }}" class="img-thumbnail z-depth-1 lazyload"
+                       alt="{{ year }}-{{ category }}-{{ category.location }}">
                 {% endthumbnail %}
                 </a>
               </figure>
-            {% endfor %}
-          </div>
-          {% if forloop.last %}
-            </div>
-            </div>
-            </div>
-          {% endif %}
+            </li>
           {% endfor %}
-        </section>
-      {% endfor %}
+        </ul>
 
+      {% endfor %}
     </div>
-
-    <article>
-      {% for text in articletext %}
-        <h5>{{ text.title }}</h5>
-        <p>{{ text.article_text_html }}</p>
-      {% endfor %}
-
-    </article>
   </section>
   <section id="aboutus" class="text-center rgba-blue-grey-light">
     <h2 class="h1-responsive text-center font-weight-bold py-5">{{ aboutus.title }}</h2>
@@ -106,93 +85,6 @@
         </div>
       </div>
     </div>
-  </section>
-  <section id="testimonials" class="text-center my-5">
-
-    <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center my-5">What Our Customers Said</h2>
-    <!-- Section description -->
-    <p class="grey-text text-center w-responsive mx-auto mb-5"></p>
-
-    <!-- Carousel Wrapper -->
-    <div id="testimonial_carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
-      <!-- Controls -->
-      <div class="controls-top">
-        <a class="btn-floating primary-color waves-effect waves-light" href="#testimonial_carousel"
-           data-slide="prev">
-          <i class="fas fa-chevron-left"></i>
-        </a>
-        <a class="btn-floating primary-color waves-effect waves-light" href="#testimonial_carousel"
-           data-slide="next">
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-      <!-- Controls -->
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        {% for _ in testimonial_count %}
-          {% if forloop.first %}
-            <li class="primary-color active" data-target="#testimonial_carousel"
-                data-slide-to="{{ forloop.counter0 }}"></li>
-          {% else %}
-            <li class="primary-color" data-target="#testimonial_carousel"
-                data-slide-to="{{ forloop.counter0 }}"></li>
-          {% endif %}
-        {% endfor %}
-      </ol>
-      <!-- Indicators -->
-      <!-- Slides -->
-      <div class="carousel-inner" role="listbox">
-        {% for testimonial in testimonials %}
-          {% if forloop.first or forloop.counter0|divisibleby:3 %}
-            {% if not forloop.first %}
-              </div>
-            {% endif %}
-            <div class="carousel-item {% if forloop.first %} active{% endif %}">
-          {% endif %}
-        <div class="col-md-4 mb-2 {% if not forloop.counter0|divisibleby:3 %}clearfix d-none d-md-block{% endif %}">
-          <!-- Card -->
-          <div class="card card-cascade narrower card-ecommerce">
-
-            <!-- Card content -->
-            <div class="card-body card-body-cascade text-center">
-              <!-- Category & Title -->
-              <a href="" class="text-muted">
-                <h5>{{ forloop.counter0 }}</h5>
-              </a>
-              <h4 class="card-title my-4">
-                <strong>
-                  <a href="">{{ testimonial.title }}</a>
-                </strong>
-              </h4>
-              <!-- Description -->
-              <p class="card-text">{{ testimonial.article_text_html|safe }}
-              </p>
-              <!-- Card footer -->
-              {#                            <div class="card-footer px-1">#}
-              {#                                <span class="float-left">69$</span>#}
-              {#                                <span class="float-right">#}
-              {#                  <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick Look">#}
-              {#                    <i class="fas fa-eye ml-3"></i>#}
-              {#                  </a>#}
-              {#                  <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">#}
-              {#                    <i class="fas fa-heart ml-3"></i>#}
-              {#                  </a>#}
-              {#                </span>#}
-              {#                            </div>#}
-            </div>
-            <!-- Card content -->
-          </div>
-          <!-- Card -->
-        </div>
-        {% if forloop.last %}
-          </div>
-        {% endif %}
-        {% endfor %}
-    </div>
-    </div>
-    <!-- Carousel Wrapper -->
-
   </section>
   {% load recaptcha2 %}
   {% recaptcha_init %}
@@ -259,17 +151,19 @@
     </div>
   </section>
 {% endblock %}
-</main>
 
 {% block scripts %}
-<script>
-    new WOW().init();
-    $(function () {
-        $("#mdb-lightbox-ui").load("{% static 'main/mdb-addons/mdb-lightbox-ui.html' %}");
-
-    });
-    $(document).ready(function () {
-        $('.mdb-select').materialSelect();
-    });
-</script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          new WOW().init();
+          $(document).ready(function () {
+              $('.mdb-select').materialSelect();
+          });
+          {% for category in categories %}
+              $('#{{ category.location.state }}_{{ category.id }}').lightGallery();
+          {% endfor %}
+          let image = document.querySelectorAll(".lazyload");
+          new LazyLoad(image);
+      });
+  </script>
 {% endblock %}

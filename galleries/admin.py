@@ -5,7 +5,6 @@ from PIL import Image
 from PIL.ExifTags import TAGS
 from django.conf import settings
 from django.contrib import admin
-from mptt.admin import MPTTModelAdmin
 from sorl.thumbnail.admin import AdminImageMixin
 
 from . import models
@@ -76,14 +75,14 @@ def set_date_time_from_image(modeladmin, request, queryset):
         set_date_time_from_image.short_description = "set the date time"
 
 
-class CategoryAdmin(MPTTModelAdmin):
-    list_display = ('title', 'description', 'date', 'published',)
-    mptt_indent_field = "title"
-    mptt_level_indent = 20
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'year', 'location', 'get_images', 'description', 'date', 'published',)
+    ordering = ('-year',)
+
 
 
 class GalleriesAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ("title", "category", "image_tag", "location", "published", "date_build", "date_build_year",)
+    list_display = ("title", "image_tag", "location", "published", "date_build", "date_build_year",)
     ordering = ('-date_build',)
     readonly_fields = ('image_tag',)
     list_filter = ('category', 'date_build_year')
