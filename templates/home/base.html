@@ -119,20 +119,20 @@
           <div class="dropdown-menu mega-menu v-1 z-depth-1 special-color py-5 px-3" aria-labelledby="dropdownMenu1">
             <div class="container">
               <div class="row">
-                {% for category in categories %}
+                {% for project in projects %}
                   {% if forloop.first %}
                     <div class="col-md-3 sub-menu mb-xl-0 mb-4">
-                    {#                    <h6 CLASS="sub-title text-uppercase font-weight-bold white-text">{{ category.year }}</h6>#}
+                    {#                    <h6 CLASS="sub-title text-uppercase font-weight-bold white-text">{{ project.year }}</h6>#}
                     <ul class="list-unstyled">
                   {% endif %}
                 <a class="dropdown-item waves-effect waves-light text-white"
-                   href="#{{ category.location.state }}_{{ category.id }}"
-                   data-offset="{% if forloop.first %}130{% else %}80{% endif %}">{{ category.title }}</a>
+                   href="#{{ project.location.state }}_{{ project.id }}"
+                   data-offset="{% if forloop.first %}130{% else %}80{% endif %}">{{ project.title }}</a>
                 {% if forloop.counter|divisibleby:4 %}
                   </ul>
                   </div>
                   <div class="col-md-3 sub-menu mb-xl-0 mb-4">
-                  {#                  <h6 CLASS="sub-title text-uppercase font-weight-bold white-text">{{ category.year }}</h6>#}
+                  {#                  <h6 CLASS="sub-title text-uppercase font-weight-bold white-text">{{ project.year }}</h6>#}
                   <ul class="list-unstyled">
                 {% endif %}
                 {% if forloop.last %}

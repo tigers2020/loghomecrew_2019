@@ -75,17 +75,16 @@ def set_date_time_from_image(modeladmin, request, queryset):
         set_date_time_from_image.short_description = "set the date time"
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'year', 'location', 'get_images', 'description', 'date', 'published',)
     ordering = ('-year',)
 
 
-
 class GalleriesAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ("title", "image_tag", "location", "published", "date_build", "date_build_year",)
+    list_display = ("get_title", "image_tag", "location", "published", "date_build", "date_build_year",)
     ordering = ('-date_build',)
     readonly_fields = ('image_tag',)
-    list_filter = ('category', 'date_build_year')
+    list_filter = ('date_build_year',)
     actions = [apply_to_publish, set_date_time_from_image, change_image_location]
 
 
@@ -94,6 +93,6 @@ class LocationAdmin(admin.ModelAdmin):
     ordering = ('state',)
 
 
-admin.site.register(models.Category, CategoryAdmin)
+admin.site.register(models.Project, ProjectAdmin)
 admin.site.register(models.BuildingImages, GalleriesAdmin)
 admin.site.register(models.Location, LocationAdmin)

@@ -8,7 +8,7 @@ from django.urls import reverse
 from django.views import generic
 
 from article.models import ArticleText
-from galleries.models import Category
+from galleries.models import Project
 # Create your views here.
 from home.forms import ContactForm
 from loghomecrew import settings
@@ -72,7 +72,7 @@ class IndexView(generic.TemplateView):
         context['form'] = form
         context['success'] = thankyou
 
-        context['categories'] = Category.objects.filter(published=True).order_by('-year')
+        context['projects'] = Project.objects.filter(published=True).order_by('-year')
         context['aboutus'] = aboutus
 
         context['features'] = features

@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a24847f-fd05-42ee-b161-937bd12186e8" name="Default" comment="update 7-5: add 404 and 500 error page,">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/loghomecrew_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/loghomecrew_2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/galleries/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/galleries/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galleries/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/galleries/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galleries/migrations/0010_auto_20190629_1725.py" beforeDir="false" afterPath="$PROJECT_DIR$/galleries/migrations/0010_auto_20190629_1725.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/galleries/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/galleries/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +33,21 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db (1)" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db (1)" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db (1)" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -51,9 +64,7 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="galleries_buildingimages: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -64,23 +75,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-              <folding>
-                <element signature="n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="259">
-              <caret line="160" column="7" lean-forward="true" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
+              <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
               <folding>
                 <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
@@ -94,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="74" column="89" selection-start-line="74" selection-start-column="89" selection-end-line="74" selection-end-column="89" />
+            <state relative-caret-position="1292">
+              <caret line="74" column="88" selection-start-line="74" selection-start-column="88" selection-end-line="74" selection-end-column="88" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -106,8 +104,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/galleries/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+            <state relative-caret-position="395">
+              <caret line="78" column="86" selection-start-line="78" selection-start-column="86" selection-end-line="78" selection-end-column="86" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,48 +116,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/galleries/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
+            <state relative-caret-position="640">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/mptt/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_project_images">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_project">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/galleries/buildingimages_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-285" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <entry file="das://380ac4e0-0e82-41e1-ad57-aa5837197e99/schema/main/table/galleries_category">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/404.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <entry file="das://380ac4e0-0e82-41e1-ad57-aa5837197e99/schema/main/table/galleries_category_images">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home/models.py">
+        <entry file="file://$USER_HOME$/galleries_project_2019_07_08_06_25_42.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -236,18 +247,18 @@
         <option value="$PROJECT_DIR$/loghomecrew/urls.py" />
         <option value="$PROJECT_DIR$/templates/500.html" />
         <option value="$PROJECT_DIR$/templates/404.html" />
-        <option value="$PROJECT_DIR$/galleries/admin.py" />
-        <option value="$PROJECT_DIR$/galleries/models.py" />
         <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/home/index.html" />
         <option value="$PROJECT_DIR$/templates/home/base.html" />
+        <option value="$PROJECT_DIR$/galleries/models.py" />
+        <option value="$PROJECT_DIR$/galleries/admin.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1269" />
+    <option name="width" value="1369" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -366,11 +377,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
+    <property name="DbGoto.DatabaseChooseByNameModel.checkBox" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="date_build&#9;null&#9;null&#10;build_date&#9;null&#9;null&#10;article_detail&#9;FILE&#9;file://C:/Users/tiger/PycharmProjects/loghomecrew/templates/article/article_detail.html&#10;command&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/main/css/base.css" />
+    <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../data/galleries_category.cvs" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
   </component>
@@ -549,7 +562,7 @@
       <workItem from="1561841155728" duration="17577000" />
       <workItem from="1562060224652" duration="258000" />
       <workItem from="1562060698807" duration="13241000" />
-      <workItem from="1562252729553" duration="32589000" />
+      <workItem from="1562252729553" duration="36914000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1513167453613</created>
@@ -838,7 +851,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562448769378</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update 7-5: add 404 and 500 error page,">
+      <created>1562551722727</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1562551722727</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -853,7 +873,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222360000" />
+    <option name="totallyTimeSpent" value="226685000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -865,11 +885,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1269" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1369" height="1047" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.40612075" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3750955" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5008104" side_tool="true" weight="0.39824945" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49918962" weight="0.32932165" />
@@ -888,7 +907,7 @@
       <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49960256" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32932165" />
       <window_info anchor="right" id="Data View" order="0" weight="0.38816854" />
-      <window_info anchor="right" id="Database" order="1" weight="0.3276923" />
+      <window_info active="true" anchor="right" id="Database" order="1" visible="true" weight="0.21161191" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
@@ -927,59 +946,13 @@
     <MESSAGE value="update 6-28: fix google tag manager" />
     <MESSAGE value="update 7-3: relocate and upload image files" />
     <MESSAGE value="update 7-4: add google tag manager" />
-    <MESSAGE value="update 7-5: add 404 and 500 error page," />
     <MESSAGE value="update 7-6: fix image_tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 7-6: fix image_tag" />
+    <MESSAGE value="update 7-5: add 404 and 500 error page," />
+    <option name="LAST_COMMIT_MESSAGE" value="update 7-5: add 404 and 500 error page," />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/article/article_detail.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/article/about_us.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/contact_success.html" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django_resized/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home/contact_us.html" />
-    <entry file="file://$PROJECT_DIR$/article/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile.windows">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="26" column="114" selection-start-line="26" selection-start-column="114" selection-end-line="26" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/main/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/article/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -1075,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_buildingimages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
-          <filtering />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1169,30 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/galleries/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="74" column="89" selection-start-line="74" selection-start-column="89" selection-end-line="74" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/galleries/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1203,7 +1145,7 @@
     <entry file="file://$PROJECT_DIR$/templates/home/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding>
             <element signature="n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#section#4;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -1211,16 +1153,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_buildingimages">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="160" column="7" lean-forward="true" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
+          <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
           <folding>
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
             <element signature="e#1139#1450#0#HTML" />
             <element signature="e#1629#2021#0#HTML" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_category_images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="74" column="88" selection-start-line="74" selection-start-column="88" selection-end-line="74" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/galleries/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="78" column="86" selection-start-line="78" selection-start-column="86" selection-end-line="78" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/galleries/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/galleries_category_images_2019_07_08_06_13_48.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/galleries_project_2019_07_08_06_25_42.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/galleries_project_2019_07_08_06_29_01.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/galleries_project_2019_07_08_06_47_05.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://380ac4e0-0e82-41e1-ad57-aa5837197e99/schema/main/table/galleries_category_images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/galleries_project_2019_07_08_06_51_10.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_project_images">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://380ac4e0-0e82-41e1-ad57-aa5837197e99/schema/main/table/galleries_category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://116ed2ef-813b-4a79-9b94-4c51e8fc50bc/schema/main/table/galleries_project">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="40bec26a-67e6-4cb2-900a-37df85a66fd9">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>

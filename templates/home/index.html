@@ -36,12 +36,12 @@
   </section>
   <section class="section-white" id="category_gallery">
     <div class="container-fluid stylish-color-dark">
-      {% for category in categories %}
+      {% for project in projects %}
         <h2 class="white-text h2-responsive wow fadeIn text-center p-2">
-          {{ category.title }}
+          {{ project.title }}
         </h2>
-        <ul id="{{ category.location.state }}_{{ category.id }}" class="list-unstyled row elegant-color-dark py-4">
-          {% for image in category.get_image_url %}
+        <ul id="{{ project.location.state }}_{{ project.id }}" class="list-unstyled row elegant-color-dark py-4">
+          {% for image in project.get_image_url %}
             <li class="col-md-4 col-lg-3 col-xl-2 col-sm-6 col-6 text-center"
                 data-responsive=""
                 data-src="{{ image.url }}"
@@ -51,7 +51,7 @@
                   <a href="">
                   <img src="https://via.placeholder.com/500x280?text=RJ+Construction"
                        data-src="{{ im.url }}" class="img-thumbnail z-depth-1 lazyload"
-                       alt="{{ year }}-{{ category }}-{{ category.location }}">
+                       alt="{{ year }}-{{ project }}-{{ project.location }}">
                 {% endthumbnail %}
                 </a>
               </figure>
@@ -159,7 +159,7 @@
           $(document).ready(function () {
               $('.mdb-select').materialSelect();
           });
-          {% for category in categories %}
+          {% for category in projects %}
               $('#{{ category.location.state }}_{{ category.id }}').lightGallery();
           {% endfor %}
           let image = document.querySelectorAll(".lazyload");

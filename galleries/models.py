@@ -37,7 +37,6 @@ def image_folder(instance, filename):
 
 
 class BuildingImages(models.Model):
-    title = models.CharField(max_length=64, blank=True, null=True)
     image = ImageField(upload_to=image_folder)
     published = models.BooleanField(default=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
@@ -45,7 +44,10 @@ class BuildingImages(models.Model):
     date_build_year = models.CharField(max_length=32, null=True, blank=True, editable=False)
 
     def __str__(self):
-        return '{} - {}'.format(str(self.date_build), self.title)
+        return '{} - {}'.format(str(self.date_build), self.get_title)
+
+    def get_title(self):
+        return self.location.name
 
     def image_tag(self):
         im = get_thumbnail(self.image, '250x125', crop='center')
@@ -86,9 +88,10 @@ class LogHomeModel(models.Model):
     description = RichTextField(blank=True, default="")
 
 
-class Category(models.Model):
+class Project(models.Model):
     year = models.IntegerField(default=2000)
     title = models.CharField(max_length=64)
+    model = models.ForeignKey(LogHomeModel, on_delete=models.CASCADE, blank=True, null=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     images = models.ManyToManyField(BuildingImages)
     description = RichTextField(blank=True)
