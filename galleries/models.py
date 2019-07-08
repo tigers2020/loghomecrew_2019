@@ -44,7 +44,7 @@ class BuildingImages(models.Model):
     date_build_year = models.CharField(max_length=32, null=True, blank=True, editable=False)
 
     def __str__(self):
-        return '{} - {}'.format(str(self.date_build), self.get_title)
+        return '{} - {}'.format(str(self.date_build), self.get_title())
 
     def get_title(self):
         return self.location.name
@@ -81,11 +81,14 @@ class BuildingImages(models.Model):
 class LogHomeModel(models.Model):
     title = models.CharField(max_length=64)
     bedroom = models.IntegerField(default=1)
-    bathroom = models.FloatField()
+    bathroom = models.FloatField(default=1)
     story = models.FloatField(default=1)
     wide = models.FloatField()
     deep = models.FloatField()
     description = RichTextField(blank=True, default="")
+
+    def __str__(self):
+        return self.title
 
 
 class Project(models.Model):

@@ -93,6 +93,12 @@ class LocationAdmin(admin.ModelAdmin):
     ordering = ('state',)
 
 
+class LogHomeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'bedroom', 'bathroom', 'story', 'wide', 'deep', 'description')
+    ordering = ('title',)
+
+
 admin.site.register(models.Project, ProjectAdmin)
 admin.site.register(models.BuildingImages, GalleriesAdmin)
 admin.site.register(models.Location, LocationAdmin)
+admin.site.register(models.LogHomeModel, LogHomeAdmin)
