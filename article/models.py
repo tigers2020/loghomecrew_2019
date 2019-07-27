@@ -5,7 +5,6 @@ from django.db import models
 # Create your models here.
 from django.utils import timezone
 from django.utils.text import slugify
-from django_resized import ResizedImageField
 
 User = get_user_model()
 
@@ -30,8 +29,7 @@ class ArticleText(models.Model):
 	title = models.CharField(max_length=255)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
 	slug = models.SlugField(unique=True, allow_unicode=True)
-	image = ResizedImageField(null=True, blank=True, upload_to=static_folder, size=[1920, 1080], keep_meta=True,
-							  quality=90)
+	image = models.ImageField(null=True, blank=True, upload_to=static_folder)
 	publish = models.BooleanField(default=False)
 	publish_date = models.DateTimeField(blank=True, null=True)
 	created_date = models.DateTimeField(auto_now_add=True)

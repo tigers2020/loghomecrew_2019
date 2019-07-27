@@ -56,9 +56,6 @@ class BuildingImages(models.Model):
     image_tag.allow_tags = True
 
     def save(self, *args, **kwargs):
-        if not self.title:
-            self.title = self.location.name
-
         if self.date_build is None or self.date_build == "":
             image_exif = get_exif(self.image)
 
