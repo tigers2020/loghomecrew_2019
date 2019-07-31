@@ -3,9 +3,10 @@ import datetime
 from django.contrib.sitemaps import Sitemap
 from django.core.mail import send_mail
 from django.http import HttpResponse
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.urls import reverse
 from django.views import generic
+from django.views.defaults import page_not_found
 
 from article.models import ArticleText
 from galleries.models import Project
@@ -116,16 +117,12 @@ def contact_failed(request):
     return HttpResponse("Send Email Failed")
 
 
-def handler404(request, exception, template_name="404.html"):
-    response = render_to_response("404.html")
-    response.status_code = 404
-    return response
+def handler404(request, exception):
+    return page_not_found(request, exception, template_name='404.html')
 
 
-def handler500(request, exception, template_name="500.html"):
-    response = render_to_response("500.html")
-    response.status_code = 500
-    return response
+def handler500(request, exception):
+    return page_not_found(request, exception, template_name='500.html')
 
 
 class SiteSitemap(Sitemap):
