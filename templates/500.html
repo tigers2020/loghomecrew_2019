@@ -1,7 +1,18 @@
 {% extends 'home/base.html' %}
 
-{% block main %}
-  <div class="container mt-5 d-flex justify-content-center h-100 align-middle">
-    <h1>500 Page</h1>
-  </div>
+{% block main %}<!-- Intro -->
+  <section class="view">
+    <div class="col-md-12 vh-100">
+      <div class="d-flex flex-column justify-content-center align-items-center h-100 p-5">
+        <h3 class="heading display-4">Sorry</h3>
+        <h1 class="heading display-3">500 Error</h1>
+        <div class="mx-auto">
+          <a href="{% url 'index_view' %}" type="button" class="btn btn-lily btn-margin btn-rounded text-black-50">Go
+            Home <i class="fas fa-caret-right ml-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- Intro -->
 {% endblock %}
