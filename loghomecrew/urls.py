@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/main/favicon/favicon.ico')),
     url(r'^$', home_views.IndexView.as_view(), name='index_view'),
+    url(r'^contact_us', RedirectView.as_view(url='/#contact')),
     url(r'^contact_us/send_failed', home_views.contact_failed, name='failed'),
     url(r'^contact_us/success', home_views.contact_success, name='success'),
 ]

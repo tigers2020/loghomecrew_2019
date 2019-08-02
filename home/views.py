@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.views import generic
-from django.views.defaults import page_not_found
+from django.views.defaults import page_not_found, server_error
 
 from article.models import ArticleText
 from galleries.models import Project
@@ -118,11 +118,12 @@ def contact_failed(request):
 
 
 def handler404(request, exception):
+
     return page_not_found(request, exception, template_name='404.html')
 
 
-def handler500(request, exception):
-    return page_not_found(request, exception, template_name='500.html')
+def handler500(request):
+    return server_error(request, template_name='500.html')
 
 
 class SiteSitemap(Sitemap):
